@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  CoordinatorBaseExample
 //
-//  Created by Jens on 12.06.20.
+//  Created by Jens Krug on 12.06.20.
 //  Copyright © 2020 Jamit Labs. All rights reserved.
 //
 
