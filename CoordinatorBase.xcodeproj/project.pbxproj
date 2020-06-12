@@ -32,6 +32,8 @@
 		B4961D9D2493983D00D19CEB /* PresenterObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D922493983D00D19CEB /* PresenterObserving.swift */; };
 		B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D9E2493984500D19CEB /* Coordinator.swift */; };
 		B4961DA22493984F00D19CEB /* WeakCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA12493984F00D19CEB /* WeakCache.swift */; };
+		B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA32493A02600D19CEB /* WeakCacheTests.swift */; };
+		B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA62493A0B700D19CEB /* CacheableElement.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		B4961D922493983D00D19CEB /* PresenterObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterObserving.swift; sourceTree = "<group>"; };
 		B4961D9E2493984500D19CEB /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B4961DA12493984F00D19CEB /* WeakCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakCache.swift; sourceTree = "<group>"; };
+		B4961DA32493A02600D19CEB /* WeakCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakCacheTests.swift; sourceTree = "<group>"; };
+		B4961DA62493A0B700D19CEB /* CacheableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableElement.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 			children = (
 				B4961D422493902600D19CEB /* CoordinatorBaseTests.swift */,
 				B4961D442493902600D19CEB /* Info.plist */,
+				B4961DA52493A09100D19CEB /* WeakCache */,
 			);
 			path = CoordinatorBaseTests;
 			sourceTree = "<group>";
@@ -324,6 +329,15 @@
 				B4961DA12493984F00D19CEB /* WeakCache.swift */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		B4961DA52493A09100D19CEB /* WeakCache */ = {
+			isa = PBXGroup;
+			children = (
+				B4961DA32493A02600D19CEB /* WeakCacheTests.swift */,
+				B4961DA62493A0B700D19CEB /* CacheableElement.swift */,
+			);
+			path = WeakCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +556,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
+				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
 				B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
