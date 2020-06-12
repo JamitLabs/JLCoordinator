@@ -114,8 +114,8 @@
 		B4961D362493902600D19CEB /* CoordinatorBase */ = {
 			isa = PBXGroup;
 			children = (
-				B4961D372493902600D19CEB /* CoordinatorBase.h */,
-				B4961D382493902600D19CEB /* Info.plist */,
+				B4961D762493954B00D19CEB /* Sources */,
+				B4961D752493953000D19CEB /* SupportingFiles */,
 			);
 			path = CoordinatorBase;
 			sourceTree = "<group>";
@@ -152,6 +152,38 @@
 			path = CoordinatorBaseExampleTests;
 			sourceTree = "<group>";
 		};
+		B4961D752493953000D19CEB /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B4961D382493902600D19CEB /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4961D762493954B00D19CEB /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B4961D782493955B00D19CEB /* Presenter */,
+				B4961D772493955400D19CEB /* Coordinator */,
+				B4961D372493902600D19CEB /* CoordinatorBase.h */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B4961D772493955400D19CEB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B4961D782493955B00D19CEB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -174,6 +206,7 @@
 				B4961D302493902600D19CEB /* Sources */,
 				B4961D312493902600D19CEB /* Frameworks */,
 				B4961D322493902600D19CEB /* Resources */,
+				B4961D742493948400D19CEB /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -316,6 +349,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B4961D742493948400D19CEB /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B4961D302493902600D19CEB /* Sources */ = {
