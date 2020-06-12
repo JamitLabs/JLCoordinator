@@ -47,7 +47,7 @@ open class Coordinator: PresenterObserving {
         parentCoordinator = nil
     }
 
-    func didStop(child: Coordinator) {
+    public func didStop(child: Coordinator) {
         // Called if child has been stopped
     }
 
