@@ -37,6 +37,7 @@ public protocol Presenter: AnyObject {
     func unregister(_ observer: PresenterObserving)
 }
 
+// MARK: - Base implementation for observer pattern
 extension Presenter {
     public func register(_ observer: PresenterObserving) {
         guard !observers.contains(observer) else { return }

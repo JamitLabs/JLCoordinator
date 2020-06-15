@@ -16,7 +16,10 @@ public class ModalNavigationPresenter: Presenter {
         delegateWrapper.delegate = self
     }
 
-    private func startWithUINavigationController(andRootViewController viewController: UIViewController, animated: Bool) {
+    private func startWithUINavigationController(
+        andRootViewController viewController: UIViewController,
+        animated: Bool
+    ) {
         navigationController = UINavigationController(rootViewController: viewController)
         navigationController?.delegate = delegateWrapper
         navigationController?.presentationController?.delegate = adaptivePresentationDelegateWrapper
