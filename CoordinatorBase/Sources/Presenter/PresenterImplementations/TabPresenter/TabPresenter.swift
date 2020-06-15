@@ -2,7 +2,7 @@
 
 import UIKit
 
-final class TabPresenter: Presenter, TabPresenting {
+public final class TabPresenter: Presenter, TabPresenting {
     public var observers: WeakCache<PresenterObserving> = .init()
     public let tabBarController: UITabBarController
 
