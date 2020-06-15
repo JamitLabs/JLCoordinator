@@ -2,15 +2,15 @@
 
 import UIKit
 
-class ModalNavigationPresenter: Presenter {
+public class ModalNavigationPresenter: Presenter {
     let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
     var navigationController: UINavigationController?
     let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
-    let observers: WeakCache<PresenterObserving> = .init()
+    public let observers: WeakCache<PresenterObserving> = .init()
 
-    init(presentingViewController: UIViewController) {
+    public init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
         adaptivePresentationDelegateWrapper.delegate = self
         delegateWrapper.delegate = self
@@ -25,7 +25,7 @@ class ModalNavigationPresenter: Presenter {
         }
     }
 
-    func present(_ viewController: UIViewController, animated: Bool = true) {
+    public func present(_ viewController: UIViewController, animated: Bool = true) {
         if let navigationController = navigationController {
             navigationController.pushViewController(viewController, animated: animated)
         } else {
@@ -33,7 +33,7 @@ class ModalNavigationPresenter: Presenter {
         }
     }
 
-    func dismiss(_ viewController: UIViewController, animated: Bool = true) {
+    public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         if navigationController?.viewControllers.first === viewController {
             navigationController?.dismiss(animated: animated) { [weak self] in
                 self?.notifyObserverAboutDismiss(of: viewController)
@@ -43,7 +43,7 @@ class ModalNavigationPresenter: Presenter {
         }
     }
 
-    func dismiss(animated: Bool = true) {
+    public func dismiss(animated: Bool = true) {
         navigationController?.dismiss(animated: animated) { [weak self] in
             guard let topViewController = self?.navigationController?.topViewController else { return }
 

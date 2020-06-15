@@ -2,23 +2,22 @@
 
 import UIKit
 
-class NavigationPresenter: Presenter {
-    let observers: WeakCache<PresenterObserving> = .init()
+public class NavigationPresenter: Presenter {
+    public let observers: WeakCache<PresenterObserving> = .init()
+    public let navigationController: UINavigationController
+    private let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
-    let navigationController: UINavigationController
-    let delegateWrapper: NavigationControllerDelegateWrapper = .init()
-
-    init(navigationController: UINavigationController) {
+    public init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         delegateWrapper.delegate = self
         navigationController.delegate = delegateWrapper
     }
 
-    func present(_ viewController: UIViewController, animated: Bool = true) {
+    public func present(_ viewController: UIViewController, animated: Bool = true) {
         navigationController.pushViewController(viewController, animated: animated)
     }
 
-    func dismiss(_ viewController: UIViewController, animated: Bool = true) {
+    public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         guard navigationController.topViewController === viewController else { return }
 
         navigationController.popViewController(animated: animated)
@@ -26,11 +25,17 @@ class NavigationPresenter: Presenter {
 }
 
 extension NavigationPresenter: NavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didPop viewController: UIViewController) {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        didPop viewController: UIViewController
+    ) {
         notifyObserverAboutDismiss(of: viewController)
     }
 
-    func navigationController(_ navigationController: UINavigationController, didPush viewController: UIViewController) {
+    public func navigationController(
+        _ navigationController: UINavigationController,
+        didPush viewController: UIViewController
+    ) {
         notifyObserverAboutPresentation(of: viewController)
     }
 }
