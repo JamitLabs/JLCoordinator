@@ -36,6 +36,7 @@
 		B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA62493A0B700D19CEB /* CacheableElement.swift */; };
 		B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA82497530200D19CEB /* CoordinatorTests.swift */; };
 		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
+		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		B4961DA62493A0B700D19CEB /* CacheableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableElement.swift; sourceTree = "<group>"; };
 		B4961DA82497530200D19CEB /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				B4961DAC249763FB00D19CEB /* CoordinatorTests */,
 				B4961DAD2497652200D19CEB /* SupportingFiles */,
 				B4961DA52493A09100D19CEB /* WeakCache */,
+				B4961DB0249776AE00D19CEB /* PresenterTests */,
 			);
 			path = CoordinatorBaseTests;
 			sourceTree = "<group>";
@@ -360,6 +363,14 @@
 				B4961D442493902600D19CEB /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4961DB0249776AE00D19CEB /* PresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
+			);
+			path = PresenterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -579,6 +590,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */,
+				B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */,
 				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,
 				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
 				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
