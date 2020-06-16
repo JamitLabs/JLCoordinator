@@ -2,25 +2,25 @@
 
 import UIKit
 
-class ModalPresenter: Presenter {
-    let observers: WeakCache<PresenterObserving> = .init()
+open class ModalPresenter: Presenter {
+    public let observers: WeakCache<PresenterObserving> = .init()
 
     let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
 
-    init(presentingViewController: UIViewController) {
+    public init(presentingViewController: UIViewController) {
         self.presentingViewController = presentingViewController
         adaptivePresentationDelegateWrapper.delegate = self
     }
 
-    func present(_ viewController: UIViewController, animated: Bool = true) {
+    public func present(_ viewController: UIViewController, animated: Bool = true) {
         viewController.presentationController?.delegate = adaptivePresentationDelegateWrapper
         presentingViewController.present(viewController, animated: animated) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
         }
     }
 
-    func dismiss(_ viewController: UIViewController, animated: Bool = true) {
+    public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         if presentingViewController.presentedViewController === viewController {
             viewController.dismiss(animated: animated) { [weak self] in
                 self?.notifyObserverAboutDismiss(of: viewController)

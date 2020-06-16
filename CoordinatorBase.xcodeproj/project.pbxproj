@@ -32,6 +32,11 @@
 		B4961D9D2493983D00D19CEB /* PresenterObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D922493983D00D19CEB /* PresenterObserving.swift */; };
 		B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D9E2493984500D19CEB /* Coordinator.swift */; };
 		B4961DA22493984F00D19CEB /* WeakCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA12493984F00D19CEB /* WeakCache.swift */; };
+		B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA32493A02600D19CEB /* WeakCacheTests.swift */; };
+		B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA62493A0B700D19CEB /* CacheableElement.swift */; };
+		B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA82497530200D19CEB /* CoordinatorTests.swift */; };
+		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
+		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +115,11 @@
 		B4961D922493983D00D19CEB /* PresenterObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterObserving.swift; sourceTree = "<group>"; };
 		B4961D9E2493984500D19CEB /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B4961DA12493984F00D19CEB /* WeakCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakCache.swift; sourceTree = "<group>"; };
+		B4961DA32493A02600D19CEB /* WeakCacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakCacheTests.swift; sourceTree = "<group>"; };
+		B4961DA62493A0B700D19CEB /* CacheableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableElement.swift; sourceTree = "<group>"; };
+		B4961DA82497530200D19CEB /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
+		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				B4961D422493902600D19CEB /* CoordinatorBaseTests.swift */,
-				B4961D442493902600D19CEB /* Info.plist */,
+				B4961DAC249763FB00D19CEB /* CoordinatorTests */,
+				B4961DAD2497652200D19CEB /* SupportingFiles */,
+				B4961DA52493A09100D19CEB /* WeakCache */,
+				B4961DB0249776AE00D19CEB /* PresenterTests */,
 			);
 			path = CoordinatorBaseTests;
 			sourceTree = "<group>";
@@ -311,8 +324,8 @@
 		B4961D8A2493983D00D19CEB /* TabPresenter */ = {
 			isa = PBXGroup;
 			children = (
-				B4961D8B2493983D00D19CEB /* TabPresenter.swift */,
 				B4961D8C2493983D00D19CEB /* TabPresenting.swift */,
+				B4961D8B2493983D00D19CEB /* TabPresenter.swift */,
 				B4961D8D2493983D00D19CEB /* TabNavigationPresenter.swift */,
 			);
 			path = TabPresenter;
@@ -324,6 +337,40 @@
 				B4961DA12493984F00D19CEB /* WeakCache.swift */,
 			);
 			path = Basic;
+			sourceTree = "<group>";
+		};
+		B4961DA52493A09100D19CEB /* WeakCache */ = {
+			isa = PBXGroup;
+			children = (
+				B4961DA32493A02600D19CEB /* WeakCacheTests.swift */,
+				B4961DA62493A0B700D19CEB /* CacheableElement.swift */,
+			);
+			path = WeakCache;
+			sourceTree = "<group>";
+		};
+		B4961DAC249763FB00D19CEB /* CoordinatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4961DA82497530200D19CEB /* CoordinatorTests.swift */,
+				B4961DAA249763CB00D19CEB /* MockCoordinator.swift */,
+			);
+			path = CoordinatorTests;
+			sourceTree = "<group>";
+		};
+		B4961DAD2497652200D19CEB /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B4961D442493902600D19CEB /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		B4961DB0249776AE00D19CEB /* PresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
+			);
+			path = PresenterTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -542,6 +589,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */,
+				B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */,
+				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,
+				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
+				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
 				B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,6 +719,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -723,6 +776,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -786,7 +840,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
-				INFOPLIST_FILE = CoordinatorBaseTests/Info.plist;
+				INFOPLIST_FILE = CoordinatorBaseTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -805,7 +859,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
-				INFOPLIST_FILE = CoordinatorBaseTests/Info.plist;
+				INFOPLIST_FILE = CoordinatorBaseTests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

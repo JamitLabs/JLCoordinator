@@ -2,16 +2,16 @@
 
 import UIKit
 
-final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
-    let tabBarController: UITabBarController
+public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
+    public let tabBarController: UITabBarController
 
-    init(tabBarController: UITabBarController) {
+    public init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
 
         super.init(navigationController: .init())
     }
 
-    override func present(_ viewController: UIViewController, animated: Bool = true) {
+    public override func present(_ viewController: UIViewController, animated: Bool = true) {
         guard tabBarController.viewControllers?.contains(navigationController) != true else {
             return super.present(viewController, animated: animated)
         }
@@ -22,7 +22,7 @@ final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
         tabBarController.setViewControllers(actualViewControllers + [navigationController], animated: animated)
     }
 
-    override func dismiss(_ viewController: UIViewController, animated: Bool = true) {
+    public override func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         guard
             viewController === navigationController.viewControllers.first,
             tabBarController.viewControllers?.contains(navigationController) == true

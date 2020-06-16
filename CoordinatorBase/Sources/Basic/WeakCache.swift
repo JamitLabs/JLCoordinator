@@ -2,14 +2,6 @@
 
 import Foundation
 
-public final class Weak<Type: AnyObject> {
-    weak var object: Type?
-
-    init(_ object: Type) {
-        self.object = object
-    }
-}
-
 public final class WeakCache<Element> {
     private let elements: NSHashTable<AnyObject>
 

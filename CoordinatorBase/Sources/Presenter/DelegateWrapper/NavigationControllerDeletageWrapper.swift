@@ -10,7 +10,11 @@ protocol NavigationControllerDelegate: AnyObject {
 final class NavigationControllerDelegateWrapper: NSObject, UINavigationControllerDelegate {
     weak var delegate: NavigationControllerDelegate?
 
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didShow viewController: UIViewController,
+        animated: Bool
+    ) {
         // NOTE: UINavigationController is excluded as fromViewController since this is case if a modal presentation
         // has been triggered, starting from an UINavigationController and presenting another UINavigationController
         if

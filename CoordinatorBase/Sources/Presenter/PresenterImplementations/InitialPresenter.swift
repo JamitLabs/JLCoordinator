@@ -2,20 +2,20 @@
 
 import UIKit
 
-class InitialPresenter: Presenter {
-    let observers: WeakCache<PresenterObserving> = .init()
+public class InitialPresenter: Presenter {
+    public let observers: WeakCache<PresenterObserving> = .init()
 
-    let window: UIWindow
+    public let window: UIWindow
 
-    init(window: UIWindow) {
+    public init(window: UIWindow) {
         self.window = window
     }
 
-    func dismiss(_ viewController: UIViewController, animated: Bool = false) {
+    public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
         window.isHidden = true
     }
 
-    func present(_ viewController: UIViewController, animated: Bool = false) {
+    public func present(_ viewController: UIViewController, animated: Bool = false) {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
     }

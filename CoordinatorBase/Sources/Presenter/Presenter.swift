@@ -37,18 +37,19 @@ public protocol Presenter: AnyObject {
     func unregister(_ observer: PresenterObserving)
 }
 
+// MARK: - Base implementation for observer pattern
 extension Presenter {
-    func register(_ observer: PresenterObserving) {
+    public func register(_ observer: PresenterObserving) {
         guard !observers.contains(observer) else { return }
 
         observers.append(observer)
     }
 
-    func unregister(_ observer: PresenterObserving) {
+    public func unregister(_ observer: PresenterObserving) {
         observers.remove(observer)
     }
 
-    func notifyObserverAboutDismiss(of viewController: UIViewController) {
+    public func notifyObserverAboutDismiss(of viewController: UIViewController) {
         switch viewController {
         case is UINavigationController:
             guard let navigationController = viewController as? UINavigationController else { return }
@@ -60,7 +61,7 @@ extension Presenter {
         }
     }
 
-    func notifyObserverAboutPresentation(of viewController: UIViewController) {
+    public func notifyObserverAboutPresentation(of viewController: UIViewController) {
         observers.all.forEach { $0.presenter(self, didPresent: viewController) }
     }
 }

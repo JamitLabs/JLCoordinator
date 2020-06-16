@@ -2,8 +2,12 @@
 
 import UIKit
 
+/// `TabPresenting` defines the base interface for Presenter which work on top of `UITabBarController`
 protocol TabPresenting: AnyObject {
+    /// The base `UITabBarController`
     var tabBarController: UITabBarController { get }
 
+    /// Initializes a `Presenter` with an `UITabBarController`
+    /// - parameter tabBarController: the base `UITabBarController`
     init(tabBarController: UITabBarController)
 }
