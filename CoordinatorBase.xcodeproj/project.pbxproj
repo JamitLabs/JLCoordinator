@@ -44,6 +44,7 @@
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
 		C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */; };
+		B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
+		B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -391,6 +393,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
+				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */,
 				B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */,
 				B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */,
 				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,
