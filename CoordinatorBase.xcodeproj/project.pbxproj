@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E793249C911A002053C2 /* MockPresentingViewController.swift */; };
 		B4961D3E2493902600D19CEB /* CoordinatorBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; };
 		B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D422493902600D19CEB /* CoordinatorBaseTests.swift */; };
 		B4961D452493902600D19CEB /* CoordinatorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B4961D372493902600D19CEB /* CoordinatorBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B448E793249C911A002053C2 /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
 		B4961D342493902600D19CEB /* CoordinatorBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoordinatorBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4961D372493902600D19CEB /* CoordinatorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorBase.h; sourceTree = "<group>"; };
 		B4961D382493902600D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -394,6 +396,7 @@
 			children = (
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
 				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
+				B448E793249C911A002053C2 /* MockPresentingViewController.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */,
+				B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */,
 				B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */,
 				B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */,
 				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,

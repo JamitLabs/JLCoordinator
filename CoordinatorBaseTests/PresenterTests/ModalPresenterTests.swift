@@ -37,7 +37,7 @@ class ModalPresenterTests: XCTestCase {
     }
 
     func testPresentViewController() throws {
-        let presentingViewController = FakePresentingViewController()
+        let presentingViewController = MockPresentingViewController()
         let modalPresenter: ModalPresenter = .init(presentingViewController: presentingViewController)
         let viewControllerToPresent: UIViewController = .init()
 
@@ -62,9 +62,9 @@ class ModalPresenterTests: XCTestCase {
     }
 
     func testDismissViewController() throws {
-        let presentingViewController = FakePresentingViewController()
+        let presentingViewController = MockPresentingViewController()
         let modalPresenter: ModalPresenter = .init(presentingViewController: presentingViewController)
-        let viewControllerToDismiss: FakePresentingViewController = .init()
+        let viewControllerToDismiss: MockPresentingViewController = .init()
 
         modalPresenter.register(observing)
 
@@ -91,9 +91,9 @@ class ModalPresenterTests: XCTestCase {
     }
 
     func testDismissIsOnlyCalledForTopMostViewController() throws {
-        let presentingViewController = FakePresentingViewController()
+        let presentingViewController = MockPresentingViewController()
         let modalPresenter: ModalPresenter = .init(presentingViewController: presentingViewController)
-        let viewControllerToDismiss: FakePresentingViewController = .init()
+        let viewControllerToDismiss: MockPresentingViewController = .init()
 
         modalPresenter.register(observing)
         presentingViewController.presentedViewControllerForTest = { UIViewController() }
@@ -114,29 +114,5 @@ class ModalPresenterTests: XCTestCase {
         }
 
         wait(for: [finishedPresentation], timeout: 1)
-    }
-}
-
-class FakePresentingViewController: UIViewController {
-    var didCallPresentFunction: ((UIViewController, Bool) -> Void)?
-    var didCallDismissFunction: ((UIViewController?, Bool) -> Void)?
-
-    var presentedViewControllerForTest: (() -> UIViewController?)?
-
-    override var presentedViewController: UIViewController? {
-        presentedViewControllerForTest?()
-    }
-
-    override func present(
-        _ viewControllerToPresent: UIViewController,
-        animated flag: Bool, completion: (() -> Void)? = nil
-    ) {
-        didCallPresentFunction?(viewControllerToPresent, flag)
-        completion?()
-    }
-
-    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
-        didCallDismissFunction?(self, flag)
-        completion?()
     }
 }
