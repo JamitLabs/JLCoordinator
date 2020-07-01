@@ -2,8 +2,13 @@
 
 import UIKit
 
+public protocol TabBarItemDataSource: AnyObject {
+    func tabPresenter(_ presenter: TabPresenter, tabBarItemAtIndex index: Int) -> UITabBarItem?
+}
+
 public final class TabPresenter: Presenter, TabPresenting {
     public var observers: WeakCache<PresenterObserving> = .init()
+    public weak var tabBarItemDataSource: TabBarItemDataSource?
     public let tabBarController: UITabBarController
 
     public init(tabBarController: UITabBarController) {
@@ -13,8 +18,12 @@ public final class TabPresenter: Presenter, TabPresenting {
     public func present(_ viewController: UIViewController, animated: Bool = false) {
         guard tabBarController.viewControllers?.contains(viewController) != true else { return }
 
-        let actualViewControllers = tabBarController.viewControllers ?? []
-        tabBarController.setViewControllers(actualViewControllers + [viewController], animated: animated)
+        let currentViewControllers = tabBarController.viewControllers ?? []
+        tabBarController.setViewControllers(currentViewControllers + [viewController], animated: animated)
+        let index = currentViewControllers.count
+        guard let tabBarItem = tabBarItemDataSource?.tabPresenter(self, tabBarItemAtIndex: index) else { return }
+
+        tabBarController.tabBar.items?[index].editWithContentsOfItem(tabBarItem)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {

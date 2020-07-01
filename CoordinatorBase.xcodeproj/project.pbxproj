@@ -37,6 +37,7 @@
 		B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA82497530200D19CEB /* CoordinatorTests.swift */; };
 		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
 		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
+		C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		B4961DA82497530200D19CEB /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
+		C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +336,7 @@
 		B4961DA02493984F00D19CEB /* Basic */ = {
 			isa = PBXGroup;
 			children = (
+				C9AE851524ACB53D003C29B9 /* Extensions */,
 				B4961DA12493984F00D19CEB /* WeakCache.swift */,
 			);
 			path = Basic;
@@ -371,6 +374,14 @@
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
 			);
 			path = PresenterTests;
+			sourceTree = "<group>";
+		};
+		C9AE851524ACB53D003C29B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -575,6 +586,7 @@
 				B4961D962493983D00D19CEB /* TabPresenter.swift in Sources */,
 				B4961D952493983D00D19CEB /* NavigationControllerDeletageWrapper.swift in Sources */,
 				B4961DA22493984F00D19CEB /* WeakCache.swift in Sources */,
+				C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */,
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,
 				B4961D9B2493983D00D19CEB /* InitialPresenter.swift in Sources */,
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
