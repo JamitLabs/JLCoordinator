@@ -34,8 +34,15 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
             return super.dismiss(viewController, animated: animated)
         }
 
-        tabBarController.dismiss(animated: animated) { [weak self] in
-            self?.notifyObserverAboutDismiss(of: viewController)
+        guard tabBarController.viewControllers!.count > 1 else {
+            tabBarController.dismiss(animated: true) { [weak self] in
+                self?.notifyObserverAboutDismiss(of: viewController)
+            }
+
+            return
         }
+
+        tabBarController.viewControllers?.removeAll { $0 === navigationController }
+        notifyObserverAboutDismiss(of: viewController)
     }
 }
