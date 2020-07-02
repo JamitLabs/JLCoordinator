@@ -39,6 +39,7 @@
 		C9AE850B24AC8843003C29B9 /* SecondaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* SecondaryCoordinator.swift */; };
 		C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */; };
 		C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */; };
+		C9EFDCC124ADEC9F00B738CC /* AddTabDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		C9AE850A24AC8843003C29B9 /* SecondaryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCoordinator.swift; sourceTree = "<group>"; };
 		C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemDelegate.swift; sourceTree = "<group>"; };
 		C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
+		C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTabDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961D9E2493984500D19CEB /* Coordinator.swift */,
+				C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,
 				B4961D9B2493983D00D19CEB /* InitialPresenter.swift in Sources */,
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
+				C9EFDCC124ADEC9F00B738CC /* AddTabDelegate.swift in Sources */,
 				B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */,
 				B4961D932493983D00D19CEB /* Presenter.swift in Sources */,
 				C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */,

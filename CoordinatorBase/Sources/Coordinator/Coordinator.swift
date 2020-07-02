@@ -1,11 +1,11 @@
 // Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
-import Foundation
 import UIKit
 
 open class Coordinator: PresenterObserving {
     public var childCoordinators: [Coordinator] = []
     public weak var parentCoordinator: Coordinator?
+    public weak var addTabDelegate: AddTabDelegate?
     public var presenter: Presenter {
         didSet {
             oldValue.unregister(self)
