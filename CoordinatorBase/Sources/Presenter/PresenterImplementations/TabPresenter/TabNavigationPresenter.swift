@@ -4,6 +4,7 @@ import UIKit
 
 public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
     public let tabBarController: UITabBarController
+    public weak var tabBarItemDelegate: TabBarItemDelegate?
 
     public init(tabBarController: UITabBarController) {
         self.tabBarController = tabBarController
@@ -16,10 +17,13 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
             return super.present(viewController, animated: animated)
         }
 
-        navigationController.tabBarItem = viewController.tabBarItem
         navigationController.pushViewController(viewController, animated: animated)
-        let actualViewControllers = tabBarController.viewControllers ?? []
-        tabBarController.setViewControllers(actualViewControllers + [navigationController], animated: animated)
+        let currentViewControllers = tabBarController.viewControllers ?? []
+        tabBarController.setViewControllers(currentViewControllers + [navigationController], animated: animated)
+
+        let index = currentViewControllers.count
+        tabBarItemDelegate?.tabPresenter(self, presentsViewController: viewController, atTabBarIndex: index)
+        navigationController.tabBarItem = viewController.tabBarItem
     }
 
     public override func dismiss(_ viewController: UIViewController, animated: Bool = true) {

@@ -37,6 +37,7 @@
 		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
 		C9AE850924AC7D2F003C29B9 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* MainCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* SecondaryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* SecondaryCoordinator.swift */; };
+		C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */; };
 		C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,7 @@
 		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
 		C9AE850824AC7D2F003C29B9 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* SecondaryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryCoordinator.swift; sourceTree = "<group>"; };
+		C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemDelegate.swift; sourceTree = "<group>"; };
 		C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961D8C2493983D00D19CEB /* TabPresenting.swift */,
+				C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */,
 				B4961D8B2493983D00D19CEB /* TabPresenter.swift */,
 				B4961D8D2493983D00D19CEB /* TabNavigationPresenter.swift */,
 			);
@@ -591,6 +594,7 @@
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
 				B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */,
 				B4961D932493983D00D19CEB /* Presenter.swift in Sources */,
+				C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */,
 				B4961D9C2493983D00D19CEB /* NavigationPresenter.swift in Sources */,
 				B4961D972493983D00D19CEB /* TabPresenting.swift in Sources */,
 			);
