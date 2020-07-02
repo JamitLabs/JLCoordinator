@@ -11,15 +11,19 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var mainCoordinator: MainCoordinator?
+    var tabCoordinator: TabCoordinator?
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         let window: UIWindow = .init()
-        mainCoordinator = .init(presenter: InitialPresenter(window: window))
-        mainCoordinator?.start()
+        tabCoordinator = .init(presenter: InitialPresenter(window: window))
+        tabCoordinator?.start()
+        tabCoordinator?.addTab { tabBarController -> Coordinator in
+            return ViewCoordinator(presenter: TabPresenter(tabBarController: tabBarController))
+        }
+
         return true
     }
 }
