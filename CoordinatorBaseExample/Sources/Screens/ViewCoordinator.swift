@@ -33,10 +33,11 @@ extension ViewCoordinator: ViewControllerDelegate {
 
     func didTriggerPushViewController(in viewController: ViewController) {
         let viewCoordinator: ViewCoordinator
-        let presenterType = type(of: presenter.self)
-        if presenterType == ModalNavigationPresenter.self || presenterType == NavigationPresenter.self || presenterType == TabNavigationPresenter.self {
+        switch presenter {
+        case is ModalNavigationPresenter, is NavigationPresenter, is TabNavigationPresenter:
             viewCoordinator = .init(presenter:presenter)
-        } else {
+
+        default:
             viewCoordinator = .init(presenter: ModalNavigationPresenter(presentingViewController: viewController))
         }
 
