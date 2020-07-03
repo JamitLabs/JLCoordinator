@@ -14,7 +14,6 @@
 		B4961D592493912B00D19CEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D582493912B00D19CEB /* ViewController.swift */; };
 		B4961D5E2493912E00D19CEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4961D5D2493912E00D19CEB /* Assets.xcassets */; };
 		B4961D612493912E00D19CEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4961D5F2493912E00D19CEB /* LaunchScreen.storyboard */; };
-		B4961D6C2493912E00D19CEB /* CoordinatorBaseExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D6B2493912E00D19CEB /* CoordinatorBaseExampleTests.swift */; };
 		B4961D7C2493959700D19CEB /* CoordinatorBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; };
 		B4961D7D2493959700D19CEB /* CoordinatorBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4961D932493983D00D19CEB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D852493983D00D19CEB /* Presenter.swift */; };
@@ -35,6 +34,7 @@
 		B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA82497530200D19CEB /* CoordinatorTests.swift */; };
 		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
 		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
+		C93C98BC24AF1489003F8791 /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */; };
 		C968C08024ADCB070056A3BA /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C07F24ADCB070056A3BA /* RandomColor.swift */; };
 		C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */; };
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
@@ -102,7 +102,6 @@
 		B4961D602493912E00D19CEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4961D622493912E00D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4961D672493912E00D19CEB /* CoordinatorBaseExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoordinatorBaseExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4961D6B2493912E00D19CEB /* CoordinatorBaseExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorBaseExampleTests.swift; sourceTree = "<group>"; };
 		B4961D6D2493912E00D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4961D852493983D00D19CEB /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B4961D872493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegateWrapper.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		B4961DA82497530200D19CEB /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
+		C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
 		C968C07F24ADCB070056A3BA /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemDelegate.swift; sourceTree = "<group>"; };
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		B4961D6A2493912E00D19CEB /* CoordinatorBaseExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4961D6B2493912E00D19CEB /* CoordinatorBaseExampleTests.swift */,
+				C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */,
 				B4961D6D2493912E00D19CEB /* Info.plist */,
 			);
 			path = CoordinatorBaseExampleTests;
@@ -644,7 +644,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4961D6C2493912E00D19CEB /* CoordinatorBaseExampleTests.swift in Sources */,
+				C93C98BC24AF1489003F8791 /* TabCoordinatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

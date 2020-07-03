@@ -24,6 +24,7 @@ extension ViewCoordinator: ViewControllerDelegate {
         add(childCoordinator: viewCoordinator)
         viewCoordinator.start()
     }
+
     func didTriggerModalNavigationController(in viewController: ViewController) {
         let viewCoordinator: ViewCoordinator = .init(presenter: ModalNavigationPresenter(presentingViewController: viewController))
         add(childCoordinator: viewCoordinator)
