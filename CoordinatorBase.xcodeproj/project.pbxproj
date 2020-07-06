@@ -18,7 +18,7 @@
 		B4961D7D2493959700D19CEB /* CoordinatorBase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B4961D932493983D00D19CEB /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D852493983D00D19CEB /* Presenter.swift */; };
 		B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D872493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift */; };
-		B4961D952493983D00D19CEB /* NavigationControllerDeletageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D882493983D00D19CEB /* NavigationControllerDeletageWrapper.swift */; };
+		B4961D952493983D00D19CEB /* NavigationControllerDelegateWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D882493983D00D19CEB /* NavigationControllerDelegateWrapper.swift */; };
 		B4961D962493983D00D19CEB /* TabPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D8B2493983D00D19CEB /* TabPresenter.swift */; };
 		B4961D972493983D00D19CEB /* TabPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D8C2493983D00D19CEB /* TabPresenting.swift */; };
 		B4961D982493983D00D19CEB /* TabNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D8D2493983D00D19CEB /* TabNavigationPresenter.swift */; };
@@ -107,7 +107,7 @@
 		B4961D6D2493912E00D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4961D852493983D00D19CEB /* Presenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		B4961D872493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationControllerDelegateWrapper.swift; sourceTree = "<group>"; };
-		B4961D882493983D00D19CEB /* NavigationControllerDeletageWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDeletageWrapper.swift; sourceTree = "<group>"; };
+		B4961D882493983D00D19CEB /* NavigationControllerDelegateWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegateWrapper.swift; sourceTree = "<group>"; };
 		B4961D8B2493983D00D19CEB /* TabPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPresenter.swift; sourceTree = "<group>"; };
 		B4961D8C2493983D00D19CEB /* TabPresenting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPresenting.swift; sourceTree = "<group>"; };
 		B4961D8D2493983D00D19CEB /* TabNavigationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavigationPresenter.swift; sourceTree = "<group>"; };
@@ -320,7 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961D872493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift */,
-				B4961D882493983D00D19CEB /* NavigationControllerDeletageWrapper.swift */,
+				B4961D882493983D00D19CEB /* NavigationControllerDelegateWrapper.swift */,
 			);
 			path = DelegateWrapper;
 			sourceTree = "<group>";
@@ -606,7 +606,7 @@
 				B4961D992493983D00D19CEB /* ModalNavigationPresenter.swift in Sources */,
 				B4961D982493983D00D19CEB /* TabNavigationPresenter.swift in Sources */,
 				B4961D962493983D00D19CEB /* TabPresenter.swift in Sources */,
-				B4961D952493983D00D19CEB /* NavigationControllerDeletageWrapper.swift in Sources */,
+				B4961D952493983D00D19CEB /* NavigationControllerDelegateWrapper.swift in Sources */,
 				B4961DA22493984F00D19CEB /* WeakCache.swift in Sources */,
 				C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */,
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,

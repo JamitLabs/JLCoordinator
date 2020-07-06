@@ -1,10 +1,4 @@
-//
-//  RandomColor.swift
-//  CoordinatorBaseExample
-//
-//  Created by Jonathan Gräser on 02.07.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import UIKit
 

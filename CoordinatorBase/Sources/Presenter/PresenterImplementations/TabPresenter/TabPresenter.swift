@@ -21,9 +21,7 @@ public final class TabPresenter: Presenter, TabPresenting {
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
-        guard tabBarController.viewControllers?.contains(viewController) == true else {
-            return
-        }
+        guard tabBarController.viewControllers?.contains(viewController) == true else { return }
 
         guard tabBarController.viewControllers!.count > 1 else {
             tabBarController.dismiss(animated: true) { [weak self] in
