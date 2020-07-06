@@ -188,12 +188,6 @@ custom_rules:
     name: "Dynamic Color Reference"
     message: "Don't use dynamic color references – use SwiftGen & Color instead."
     severity: warning
-  dynamic_storyboard_reference:
-    included: ".*.swift"
-    regex: 'UIStoryboard\(\s*name:\s*\"'
-    name: "Dynamic Storyboard Reference"
-    message: "Don't use dynamic storyboard references – use SwiftGen & StoryboardScene instead."
-    severity: warning
   dynamic_string_reference:
     included: ".*.swift"
     regex: 'NSLocalizedString\s*\('

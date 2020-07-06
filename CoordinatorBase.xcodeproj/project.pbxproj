@@ -42,6 +42,7 @@
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
 		C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */; };
+		C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */; };
 		C9EFDCC124ADEC9F00B738CC /* AddTabDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -131,6 +132,7 @@
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
+		C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
 		C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTabDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961D582493912B00D19CEB /* ViewController.swift */,
+				C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */,
 				C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */,
 				C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */,
 			);
@@ -564,6 +567,7 @@
 			files = (
 				B4961D612493912E00D19CEB /* LaunchScreen.storyboard in Resources */,
 				B4961D5E2493912E00D19CEB /* Assets.xcassets in Resources */,
+				C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

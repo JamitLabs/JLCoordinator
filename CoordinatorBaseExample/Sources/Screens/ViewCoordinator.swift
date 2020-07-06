@@ -4,7 +4,7 @@ import CoordinatorBase
 import UIKit
 
 final class ViewCoordinator: Coordinator {
-    private let viewController: ViewController = .init()
+    private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil).instantiateViewController(identifier: "ViewController")
 
     override func start() {
         viewController.delegate = self

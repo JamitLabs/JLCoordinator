@@ -6,7 +6,7 @@ import UIKit
 public protocol TabPresenting: AnyObject {
     /// The base `UITabBarController`
     var tabBarController: UITabBarController { get }
-    var tabBarItemDelegate: TabBarItemDelegate? { get set}
+    /// The delegate gets called to configure the presented view controller with a `UITabBarItem`
     var tabBarItemDelegate: TabBarItemDelegate? { get set }
 
     /// Initializes a `Presenter` with an `UITabBarController`
