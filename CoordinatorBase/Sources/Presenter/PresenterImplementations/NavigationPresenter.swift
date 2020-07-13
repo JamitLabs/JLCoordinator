@@ -25,6 +25,12 @@ public class NavigationPresenter: NavigablePresenting {
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         pop(viewController, animated: animated)
     }
+
+    public func dismissRoot(animated: Bool) {
+        navigationController.dismiss(animated: animated) { [weak self] in
+            self?.navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
+        }
+    }
 }
 
 extension NavigationPresenter: NavigationControllerDelegate {

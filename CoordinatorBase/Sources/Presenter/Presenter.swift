@@ -24,6 +24,12 @@ public protocol Presenter: AnyObject {
     ///     - animated: A flag that defines if the dismissal should be animated
     func dismiss(_ viewController: UIViewController, animated: Bool)
 
+    /// This function implements the dismissal of the root view and its subviews
+    ///
+    /// - parameters:
+    ///     - animated: A flag that defines if the dismissal should be animated
+    func dismissRoot(animated: Bool)
+
     /// This function is implementing the registration logic for the `PresenterObserving`
     ///
     /// - parameters:

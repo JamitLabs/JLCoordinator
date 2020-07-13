@@ -18,6 +18,10 @@ public class InitialPresenter: InitialPresenting {
         notifyObserverAboutDismiss(of: viewController)
     }
 
+    public func dismissRoot(animated: Bool) {
+        window.isHidden = true
+    }
+
     public func present(_ viewController: UIViewController, animated: Bool = false) {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
