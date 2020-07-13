@@ -13,11 +13,12 @@ public final class TabPresenter: Presenter, TabPresenting {
     public func present(_ viewController: UIViewController, animated: Bool = false) {
         guard tabBarController.viewControllers?.contains(viewController) != true else { return }
 
-        let actualViewControllers = tabBarController.viewControllers ?? []
-        tabBarController.setViewControllers(actualViewControllers + [viewController], animated: animated)
+        let currentViewControllers = tabBarController.viewControllers ?? []
+        tabBarController.setViewControllers(currentViewControllers + [viewController], animated: animated)
+        notifyObserverAboutPresentation(of: viewController)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
-        tabBarController.viewControllers?.removeAll { $0 === viewController }
+       NSLog("⚠️ Presenter \(String(describing: self)) - \(#function): TabPresenter doesn't dismiss its root views")
     }
 }

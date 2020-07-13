@@ -2,8 +2,7 @@
 
 import UIKit
 
-/// `AdaptivePresentationControllerDelegate` is the delegate which gets informed from the
-/// `AdaptivePresentingControllerDelegateWrapper`
+/// `AdaptivePresentationControllerDelegate` is the delegate which gets informed from the `AdaptivePresentingControllerDelegateWrapper`
 protocol AdaptivePresentationControllerDelegate: AnyObject {
      /// This function is called, if a modally presented `UIViewController` has been dismissed adaptive
      ///

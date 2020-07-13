@@ -67,10 +67,10 @@ disabled_rules:
 - type_name
 
 included:
-- App/Sources
-- Tests/Sources
-- UITests/Sources
-- Extensions
+- CoordinatorBase/Sources
+- CoordinatorBaseTests/Sources
+- CoordinatorBaseExample/Sources
+- CoordinatorBaseExampleTests/Sources
 
 # Rule Configurations
 conditional_returns_on_newline:
@@ -172,7 +172,7 @@ custom_rules:
     severity: warning
   controller_class_name_suffix:
     included: ".*.swift"
-    regex: 'class +\w+(?<!View|Flow|Model)Controller'
+    regex: 'class +\w+(?<!View|Flow|Model|Navigation|Presentation)Controller'
     name: "Controller Class Name Suffix"
     message: "Only use the `Controller` class name suffix for ViewControllers or FlowControllers."
     severity: warning
@@ -187,12 +187,6 @@ custom_rules:
     regex: 'UIColor\(\s*named:\s*\"'
     name: "Dynamic Color Reference"
     message: "Don't use dynamic color references – use SwiftGen & Color instead."
-    severity: warning
-  dynamic_storyboard_reference:
-    included: ".*.swift"
-    regex: 'UIStoryboard\(\s*name:\s*\"'
-    name: "Dynamic Storyboard Reference"
-    message: "Don't use dynamic storyboard references – use SwiftGen & StoryboardScene instead."
     severity: warning
   dynamic_string_reference:
     included: ".*.swift"
