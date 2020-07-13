@@ -54,4 +54,8 @@ extension ViewCoordinator: ViewControllerDelegate {
     func didTriggerCloseButton(in viewController: ViewController) {
         presenter.dismiss(viewController, animated: true)
     }
+
+    func didTriggerCloseRootButton(in viewController: ViewController) {
+        presenter.dismissRoot(animated: true)
+    }
 }
