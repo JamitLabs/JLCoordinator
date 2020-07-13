@@ -2,10 +2,10 @@
 
 import UIKit
 
-public class ModalNavigationPresenter: Presenter {
-    let presentingViewController: UIViewController
+public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
+    public let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
-    var navigationController: UINavigationController?
+    public var navigationController: UINavigationController!
     let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public let observers: WeakCache<PresenterObserving> = .init()

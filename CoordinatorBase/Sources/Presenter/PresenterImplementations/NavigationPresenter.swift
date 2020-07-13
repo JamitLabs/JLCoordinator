@@ -2,9 +2,9 @@
 
 import UIKit
 
-public class NavigationPresenter: Presenter {
+public class NavigationPresenter: NavigablePresenting {
     public let observers: WeakCache<PresenterObserving> = .init()
-    public let navigationController: UINavigationController
+    public let navigationController: UINavigationController!
     private let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public init(navigationController: UINavigationController) {

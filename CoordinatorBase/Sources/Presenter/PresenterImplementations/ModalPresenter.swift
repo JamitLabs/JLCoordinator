@@ -2,10 +2,10 @@
 
 import UIKit
 
-open class ModalPresenter: Presenter {
+open class ModalPresenter: ModalPresenting {
     public let observers: WeakCache<PresenterObserving> = .init()
 
-    let presentingViewController: UIViewController
+    public let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
 
     public init(presentingViewController: UIViewController) {

@@ -28,7 +28,7 @@ extension ViewCoordinator: ViewControllerDelegate {
     func didTriggerPushViewController(in viewController: ViewController) {
         let viewCoordinator: ViewCoordinator
         switch presenter {
-        case is ModalNavigationPresenter, is NavigationPresenter, is TabNavigationPresenter:
+        case is NavigablePresenting:
             viewCoordinator = .init(presenter:presenter)
 
         default:

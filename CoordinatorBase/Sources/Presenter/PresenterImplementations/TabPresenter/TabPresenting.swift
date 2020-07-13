@@ -3,7 +3,7 @@
 import UIKit
 
 /// `TabPresenting` defines the base interface for Presenter which work on top of `UITabBarController`
-public protocol TabPresenting: AnyObject {
+public protocol TabPresenting: Presenter {
     /// The base `UITabBarController`
     var tabBarController: UITabBarController { get }
 

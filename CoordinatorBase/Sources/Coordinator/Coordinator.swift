@@ -5,7 +5,7 @@ import UIKit
 open class Coordinator: PresenterObserving {
     public var childCoordinators: [Coordinator] = []
     public weak var parentCoordinator: Coordinator?
-    public var presenter: Presenter {
+    open var presenter: Presenter {
         didSet {
             oldValue.unregister(self)
             presenter.register(self)

@@ -2,7 +2,7 @@
 
 import UIKit
 
-public class InitialPresenter: Presenter {
+public class InitialPresenter: InitialPresenting {
     public let observers: WeakCache<PresenterObserving> = .init()
 
     public let window: UIWindow
