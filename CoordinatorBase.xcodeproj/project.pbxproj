@@ -38,12 +38,10 @@
 		C93C98BE24AF29A4003F8791 /* ViewCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */; };
 		C93C98C024AF4B10003F8791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */; };
 		C968C08024ADCB070056A3BA /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C07F24ADCB070056A3BA /* RandomColor.swift */; };
-		C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */; };
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
 		C9AE851424ACB538003C29B9 /* UITabBarItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */; };
 		C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */; };
-		C9EFDCC124ADEC9F00B738CC /* AddTabDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,12 +126,10 @@
 		C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C968C07F24ADCB070056A3BA /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
-		C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemDelegate.swift; sourceTree = "<group>"; };
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		C9AE851024ACB4EB003C29B9 /* UITabBarItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBarItemExtension.swift; sourceTree = "<group>"; };
 		C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
-		C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTabDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,7 +253,6 @@
 			isa = PBXGroup;
 			children = (
 				B4961D9E2493984500D19CEB /* Coordinator.swift */,
-				C9EFDCC024ADEC9F00B738CC /* AddTabDelegate.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -344,7 +339,6 @@
 			isa = PBXGroup;
 			children = (
 				B4961D8C2493983D00D19CEB /* TabPresenting.swift */,
-				C968C08224ADD86F0056A3BA /* TabBarItemDelegate.swift */,
 				B4961D8B2493983D00D19CEB /* TabPresenter.swift */,
 				B4961D8D2493983D00D19CEB /* TabNavigationPresenter.swift */,
 			);
@@ -616,10 +610,8 @@
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,
 				B4961D9B2493983D00D19CEB /* InitialPresenter.swift in Sources */,
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
-				C9EFDCC124ADEC9F00B738CC /* AddTabDelegate.swift in Sources */,
 				B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */,
 				B4961D932493983D00D19CEB /* Presenter.swift in Sources */,
-				C968C08324ADD86F0056A3BA /* TabBarItemDelegate.swift in Sources */,
 				B4961D9C2493983D00D19CEB /* NavigationPresenter.swift in Sources */,
 				B4961D972493983D00D19CEB /* TabPresenting.swift in Sources */,
 			);

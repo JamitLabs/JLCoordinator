@@ -16,8 +16,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window: UIWindow = .init(windowScene: windowScene)
         tabCoordinator = .init(presenter: InitialPresenter(window: window))
         tabCoordinator?.start()
-        tabCoordinator?.addTab { tabBarController -> Coordinator in
-            return ViewCoordinator(presenter: TabPresenter(tabBarController: tabBarController))
-        }
     }
 }

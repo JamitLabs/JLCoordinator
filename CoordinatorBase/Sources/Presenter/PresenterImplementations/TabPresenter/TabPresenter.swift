@@ -4,7 +4,6 @@ import UIKit
 
 public final class TabPresenter: Presenter, TabPresenting {
     public var observers: WeakCache<PresenterObserving> = .init()
-    public weak var tabBarItemDelegate: TabBarItemDelegate?
     public let tabBarController: UITabBarController
 
     public init(tabBarController: UITabBarController) {
@@ -16,21 +15,10 @@ public final class TabPresenter: Presenter, TabPresenting {
 
         let currentViewControllers = tabBarController.viewControllers ?? []
         tabBarController.setViewControllers(currentViewControllers + [viewController], animated: animated)
-        let index = currentViewControllers.count
-        tabBarItemDelegate?.tabPresenter(self, presentsViewController: viewController, atTabBarIndex: index)
+        notifyObserverAboutPresentation(of: viewController)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
-        guard tabBarController.viewControllers?.contains(viewController) == true else { return }
-
-        guard tabBarController.viewControllers!.count > 1 else {
-            tabBarController.dismiss(animated: true) { [weak self] in
-                self?.notifyObserverAboutDismiss(of: viewController)
-            }
-
-            return
-        }
-
-        tabBarController.viewControllers?.removeAll { $0 === viewController }
+       NSLog("⚠️ Presenter \(String(describing: self)) - \(#function): TabPresenter doesn't dismiss its root views")
     }
 }

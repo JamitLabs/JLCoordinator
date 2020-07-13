@@ -7,22 +7,21 @@ protocol ViewControllerDelegate: AnyObject {
     func didTriggerModalNavigationController(in viewController: ViewController)
     func didTriggerPushViewController(in viewController: ViewController)
     func didTriggerModalTabController(in viewController: ViewController)
-    func didTriggerModalTabNavigationController(in viewController: ViewController)
-    func didTriggerAddTab(in viewController: ViewController)
-    func didTriggerAddTabNavigation(in viewController: ViewController)
     func didTriggerCloseButton(in viewController: ViewController)
 }
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     weak var delegate: ViewControllerDelegate?
+    private lazy var lazyTabBarItem: UITabBarItem = .init(title: "View", image: nil, selectedImage: nil)
+    override var tabBarItem: UITabBarItem! {
+        get { return lazyTabBarItem }
+        set { lazyTabBarItem = newValue }
+    }
 
     @IBOutlet private var modalViewControllerButton: UIButton!
     @IBOutlet private var modalNavigationControllerButton: UIButton!
     @IBOutlet private var pushViewControllerButton: UIButton!
     @IBOutlet private var modalTabControllerButton: UIButton!
-    @IBOutlet private var modalTabNavigationControllerButton: UIButton!
-    @IBOutlet private var addTabButton: UIButton!
-    @IBOutlet private var addTabNavigationButton: UIButton!
     @IBOutlet private var closeButton: UIButton!
 
     override func viewDidLoad() {
@@ -45,18 +44,6 @@ class ViewController: UIViewController {
 
     @IBAction private func didTriggerModalTabControllerButton(_ sender: UIButton) {
         delegate?.didTriggerModalTabController(in: self)
-    }
-
-    @IBAction private func didTriggerModalTabNavigationControllerButton(_ sender: UIButton) {
-        delegate?.didTriggerModalTabNavigationController(in: self)
-    }
-
-    @IBAction private func didTriggerAddTabButton(_ sender: UIButton) {
-        delegate?.didTriggerAddTab(in: self)
-    }
-
-    @IBAction private func didTriggerAddNavigationTabButton(_ sender: UIButton) {
-        delegate?.didTriggerAddTabNavigation(in: self)
     }
 
     @IBAction private func didTriggerCloseButton(_ sender: UIButton) {

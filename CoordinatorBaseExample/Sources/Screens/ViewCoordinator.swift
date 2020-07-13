@@ -43,38 +43,12 @@ extension ViewCoordinator: ViewControllerDelegate {
         let tabCoordinator: TabCoordinator = .init(presenter: ModalPresenter(presentingViewController: viewController))
         add(childCoordinator: tabCoordinator)
         tabCoordinator.start()
-        tabCoordinator.addTab { tabBarController -> Coordinator in
-            return ViewCoordinator(presenter: TabPresenter(tabBarController: tabBarController))
-        }
     }
 
     func didTriggerModalTabNavigationController(in viewController: ViewController) {
         let tabCoordinator: TabCoordinator = .init(presenter: ModalPresenter(presentingViewController: viewController))
         add(childCoordinator: tabCoordinator)
         tabCoordinator.start()
-        tabCoordinator.addTab { tabBarController -> Coordinator in
-            return ViewCoordinator(presenter: TabNavigationPresenter(tabBarController: tabBarController))
-        }
-    }
-
-    func didTriggerAddTab(in viewController: ViewController) {
-        guard let addTabDelegate = addTabDelegate else {
-            return didTriggerModalTabController(in: viewController)
-        }
-
-        addTabDelegate.addTab { tabBarController -> Coordinator in
-            return ViewCoordinator(presenter: TabPresenter(tabBarController: tabBarController))
-        }
-    }
-
-    func didTriggerAddTabNavigation(in viewController: ViewController) {
-        guard let addTabDelegate = addTabDelegate else {
-            return didTriggerModalTabNavigationController(in: viewController)
-        }
-
-        addTabDelegate.addTab { tabBarController -> Coordinator in
-            return ViewCoordinator(presenter: TabNavigationPresenter(tabBarController: tabBarController))
-        }
     }
 
     func didTriggerCloseButton(in viewController: ViewController) {

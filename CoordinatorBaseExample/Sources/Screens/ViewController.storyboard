@@ -16,18 +16,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bus-lr-52J">
-                                <rect key="frame" x="101" y="328" width="212" height="240"/>
+                                <rect key="frame" x="113.5" y="373" width="187" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrq-PV-dch">
-                                        <rect key="frame" x="0.0" y="0.0" width="212" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal ViewController"/>
                                         <connections>
-                                            <action selector="didTriggerModalViewControllerButton:" destination="aJT-t8-AhY" eventType="touchDragInside" id="57X-Rg-Vza"/>
+                                            <action selector="didTriggerModalViewControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="5EA-hH-Zyx"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="345-1A-vYV">
-                                        <rect key="frame" x="0.0" y="30" width="212" height="30"/>
+                                        <rect key="frame" x="0.0" y="30" width="187" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal NavigationController"/>
                                         <connections>
@@ -35,7 +35,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-5q-ukH">
-                                        <rect key="frame" x="0.0" y="60" width="212" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="187" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Push ViewController"/>
                                         <connections>
@@ -43,39 +43,15 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks7-cW-SdI">
-                                        <rect key="frame" x="0.0" y="90" width="212" height="30"/>
+                                        <rect key="frame" x="0.0" y="90" width="187" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal TabController"/>
                                         <connections>
                                             <action selector="didTriggerModalTabControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="Utw-KW-DVW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-mh-K9c">
-                                        <rect key="frame" x="0.0" y="120" width="212" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Modal TabNavigationController"/>
-                                        <connections>
-                                            <action selector="didTriggerModalTabNavigationControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="6Lj-cC-tkw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lib-eU-RE6">
-                                        <rect key="frame" x="0.0" y="150" width="212" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Add Tab"/>
-                                        <connections>
-                                            <action selector="didTriggerAddTabButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="QZD-Dz-hSf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqk-W9-0zC">
-                                        <rect key="frame" x="0.0" y="180" width="212" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Add NavigationTab"/>
-                                        <connections>
-                                            <action selector="didTriggerAddNavigationTabButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="UDg-J4-GbJ"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4N-j1-OH7">
-                                        <rect key="frame" x="0.0" y="210" width="212" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="187" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Close View"/>
                                         <connections>
@@ -93,12 +69,9 @@
                         <viewLayoutGuide key="safeArea" id="EVa-1p-vdI"/>
                     </view>
                     <connections>
-                        <outlet property="addTabButton" destination="lib-eU-RE6" id="oJi-Z6-IHN"/>
-                        <outlet property="addTabNavigationButton" destination="oqk-W9-0zC" id="DZ3-cr-XRY"/>
                         <outlet property="closeButton" destination="a4N-j1-OH7" id="mbH-cr-Vyq"/>
                         <outlet property="modalNavigationControllerButton" destination="345-1A-vYV" id="97H-fd-CHX"/>
                         <outlet property="modalTabControllerButton" destination="Ks7-cW-SdI" id="uhn-xD-eY7"/>
-                        <outlet property="modalTabNavigationControllerButton" destination="dM7-mh-K9c" id="SMe-sP-JXy"/>
                         <outlet property="modalViewControllerButton" destination="mrq-PV-dch" id="sCf-2Y-f7K"/>
                         <outlet property="pushViewControllerButton" destination="Vh9-5q-ukH" id="SZS-9i-kBP"/>
                     </connections>
