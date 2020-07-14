@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4489D2D24BE047200EF394F /* MockNavigationController.swift */; };
 		B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E793249C911A002053C2 /* MockPresentingViewController.swift */; };
 		B448E796249C93DF002053C2 /* MockPresenterObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E795249C93DF002053C2 /* MockPresenterObserving.swift */; };
+		B448E799249C994A002053C2 /* NavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E798249C994A002053C2 /* NavigationPresenterTests.swift */; };
 		B4961D3E2493902600D19CEB /* CoordinatorBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; };
 		B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D422493902600D19CEB /* CoordinatorBaseTests.swift */; };
 		B4961D452493902600D19CEB /* CoordinatorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B4961D372493902600D19CEB /* CoordinatorBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -36,6 +38,7 @@
 		B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DA82497530200D19CEB /* CoordinatorTests.swift */; };
 		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
 		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
+		B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */; };
 		C93C98BC24AF1489003F8791 /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */; };
 		C93C98BE24AF29A4003F8791 /* ViewCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */; };
 		C93C98C024AF4B10003F8791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */; };
@@ -46,7 +49,6 @@
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
 		C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */; };
-		B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +97,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B4489D2D24BE047200EF394F /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		B448E793249C911A002053C2 /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
 		B448E795249C93DF002053C2 /* MockPresenterObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterObserving.swift; sourceTree = "<group>"; };
+		B448E798249C994A002053C2 /* NavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPresenterTests.swift; sourceTree = "<group>"; };
 		B4961D342493902600D19CEB /* CoordinatorBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoordinatorBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4961D372493902600D19CEB /* CoordinatorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorBase.h; sourceTree = "<group>"; };
 		B4961D382493902600D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		B4961DA82497530200D19CEB /* CoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorTests.swift; sourceTree = "<group>"; };
 		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
+		B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenterTests.swift; sourceTree = "<group>"; };
 		C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +144,6 @@
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
-		B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +180,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B448E797249C947F002053C2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B448E793249C911A002053C2 /* MockPresentingViewController.swift */,
+				B448E795249C93DF002053C2 /* MockPresenterObserving.swift */,
+				B4489D2D24BE047200EF394F /* MockNavigationController.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		B4961D2A2493902600D19CEB = {
 			isa = PBXGroup;
 			children = (
@@ -396,10 +410,10 @@
 		B4961DB0249776AE00D19CEB /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
+				B448E797249C947F002053C2 /* Helper */,
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
 				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
-				B448E793249C911A002053C2 /* MockPresentingViewController.swift */,
-				B448E795249C93DF002053C2 /* MockPresenterObserving.swift */,
+				B448E798249C994A002053C2 /* NavigationPresenterTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -642,10 +656,12 @@
 				B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */,
 				B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */,
 				B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */,
+				B448E799249C994A002053C2 /* NavigationPresenterTests.swift in Sources */,
 				B448E796249C93DF002053C2 /* MockPresenterObserving.swift in Sources */,
 				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,
 				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
 				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
+				B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */,
 				B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
