@@ -9,23 +9,22 @@ open class ModalPresenter: ModalPresenting {
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
 
     public init(presentingViewController: UIViewController) {
+        assert(
+            presentingViewController.presentedViewController == nil,
+            "Trying to initialise ModalPresenter with a `UIViewController` which already is presenting another `UIViewController`. This is not allowed!"
+        )
+
         self.presentingViewController = presentingViewController
         adaptivePresentationDelegateWrapper.delegate = self
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
         viewController.presentationController?.delegate = adaptivePresentationDelegateWrapper
-        presentingViewController.present(viewController, animated: animated) { [weak self] in
-            self?.notifyObserverAboutPresentation(of: viewController)
-        }
+        presentModally(viewController, animated: true)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
-        if presentingViewController.presentedViewController === viewController {
-            viewController.dismiss(animated: animated) { [weak self] in
-                self?.notifyObserverAboutDismiss(of: viewController)
-            }
-        }
+        dismissModally(viewController, animated: animated)
     }
 }
 

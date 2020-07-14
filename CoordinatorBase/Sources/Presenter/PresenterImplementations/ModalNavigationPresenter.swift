@@ -23,26 +23,22 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         navigationController.delegate = delegateWrapper
         navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
         navigationController.addChild(viewController)
-        presentingViewController.present(navigationController, animated: true) { [weak self] in
-            self?.notifyObserverAboutPresentation(of: viewController)
-        }
+        presentModally(navigationController, animated: true)
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
-        if navigationController.presentingViewController != nil {
-            navigationController.pushViewController(viewController, animated: animated)
-        } else {
-            startWithUINavigationController(andRootViewController: viewController, animated: animated)
+        guard navigationController.presentingViewController == nil else {
+            return push(viewController, animated: animated)
         }
+
+        startWithUINavigationController(andRootViewController: viewController, animated: animated)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         if navigationController.viewControllers.first === viewController {
-            navigationController.dismiss(animated: animated) { [weak self] in
-                self?.notifyObserverAboutDismiss(of: viewController)
-            }
+            dismissModally(navigationController, animated: animated)
         } else if navigationController.topViewController === viewController {
-            navigationController.popViewController(animated: animated)
+            pop(viewController, animated: animated)
         }
     }
 

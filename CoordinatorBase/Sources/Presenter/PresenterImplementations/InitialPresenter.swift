@@ -13,10 +13,12 @@ public class InitialPresenter: InitialPresenting {
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
         window.isHidden = true
+        notifyObserverAboutDismiss(of: viewController)
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = false) {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
+        notifyObserverAboutPresentation(of: viewController)
     }
 }

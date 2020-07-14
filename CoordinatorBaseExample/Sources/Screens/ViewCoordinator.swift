@@ -29,7 +29,7 @@ extension ViewCoordinator: ViewControllerDelegate {
         let viewCoordinator: ViewCoordinator
         switch presenter {
         case is NavigablePresenting:
-            viewCoordinator = .init(presenter:presenter)
+            viewCoordinator = .init(presenter: presenter)
 
         default:
             viewCoordinator = .init(presenter: ModalNavigationPresenter(presentingViewController: viewController))

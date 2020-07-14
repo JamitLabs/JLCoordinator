@@ -13,9 +13,7 @@ public final class TabPresenter: Presenter, TabPresenting {
     public func present(_ viewController: UIViewController, animated: Bool = false) {
         guard tabBarController.viewControllers?.contains(viewController) != true else { return }
 
-        let currentViewControllers = tabBarController.viewControllers ?? []
-        tabBarController.setViewControllers(currentViewControllers + [viewController], animated: animated)
-        notifyObserverAboutPresentation(of: viewController)
+        presentOnTab(viewController, animated: animated)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
