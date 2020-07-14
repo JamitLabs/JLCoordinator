@@ -3,5 +3,5 @@
 import UIKit
 
 public protocol NavigablePresenting: Presenter {
-    var navigationController: UINavigationController! { get }
+    var navigationController: UINavigationController { get }
 }

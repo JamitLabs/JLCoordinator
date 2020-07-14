@@ -5,7 +5,7 @@ import UIKit
 public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     public let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
-    public var navigationController: UINavigationController!
+    public var navigationController: UINavigationController = .init()
     let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public let observers: WeakCache<PresenterObserving> = .init()
@@ -20,16 +20,16 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         andRootViewController viewController: UIViewController,
         animated: Bool
     ) {
-        navigationController = UINavigationController(rootViewController: viewController)
-        navigationController?.delegate = delegateWrapper
-        navigationController?.presentationController?.delegate = adaptivePresentationDelegateWrapper
-        presentingViewController.present(navigationController!, animated: true) { [weak self] in
+        navigationController.delegate = delegateWrapper
+        navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
+        navigationController.addChild(viewController)
+        presentingViewController.present(navigationController, animated: true) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
         }
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
-        if let navigationController = navigationController {
+        if navigationController.presentingViewController != nil {
             navigationController.pushViewController(viewController, animated: animated)
         } else {
             startWithUINavigationController(andRootViewController: viewController, animated: animated)
@@ -37,18 +37,18 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
-        if navigationController?.viewControllers.first === viewController {
-            navigationController?.dismiss(animated: animated) { [weak self] in
+        if navigationController.viewControllers.first === viewController {
+            navigationController.dismiss(animated: animated) { [weak self] in
                 self?.notifyObserverAboutDismiss(of: viewController)
             }
-        } else if navigationController?.topViewController === viewController {
-            navigationController?.popViewController(animated: animated)
+        } else if navigationController.topViewController === viewController {
+            navigationController.popViewController(animated: animated)
         }
     }
 
     public func dismiss(animated: Bool = true) {
-        navigationController?.dismiss(animated: animated) { [weak self] in
-            guard let topViewController = self?.navigationController?.topViewController else { return }
+        navigationController.dismiss(animated: animated) { [weak self] in
+            guard let topViewController = self?.navigationController.topViewController else { return }
 
             self?.notifyObserverAboutDismiss(of: topViewController)
         }
