@@ -1,23 +1,8 @@
-//
-//  ViewCoordinatorTests.swift
-//  CoordinatorBaseExampleTests
-//
-//  Created by Jonathan Gräser on 03.07.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import XCTest
 import CoordinatorBase
 @testable import CoordinatorBaseExample
-
-final class MockAddTabDelegate: AddTabDelegate {
-    var addTabCallBack: (() -> Void)?
-
-    func addTab(for coordinator: (UITabBarController) -> Coordinator) {
-        addTabCallBack?()
-        _ = coordinator(UITabBarController())
-    }
-}
 
 final class ViewCoordinatorTests: XCTestCase {
     func testStart() {
@@ -63,38 +48,6 @@ final class ViewCoordinatorTests: XCTestCase {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
         viewCoordinator.didTriggerModalTabNavigationController(in: .init())
-        XCTAssert(viewCoordinator.childCoordinators.count == 1)
-    }
-
-    func testDidTriggerAddTab() {
-        let waitExp = expectation(description: "waitForAddTabCallback")
-        let mockPresenter: MockPresenter = .init()
-        let mockAddTabDelegate: MockAddTabDelegate = .init()
-        mockAddTabDelegate.addTabCallBack = { waitExp.fulfill() }
-        var viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
-
-        viewCoordinator.addTabDelegate = mockAddTabDelegate
-        viewCoordinator.didTriggerAddTab(in: .init())
-        wait(for: [waitExp], timeout: 1)
-
-        viewCoordinator = .init(presenter: mockPresenter)
-        viewCoordinator.didTriggerAddTabNavigation(in: .init())
-        XCTAssert(viewCoordinator.childCoordinators.count == 1)
-    }
-
-    func testDidTriggerAddTabNavigation() {
-        let waitExp = expectation(description: "waitForAddTabCallback")
-        let mockPresenter: MockPresenter = .init()
-        let mockAddTabDelegate: MockAddTabDelegate = .init()
-        mockAddTabDelegate.addTabCallBack = { waitExp.fulfill() }
-        var viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
-
-        viewCoordinator.addTabDelegate = mockAddTabDelegate
-        viewCoordinator.didTriggerAddTabNavigation(in: .init())
-        wait(for: [waitExp], timeout: 1)
-
-        viewCoordinator = .init(presenter: mockPresenter)
-        viewCoordinator.didTriggerAddTabNavigation(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }
 
