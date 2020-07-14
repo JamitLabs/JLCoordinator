@@ -28,8 +28,9 @@ open class ModalPresenter: ModalPresenting {
     }
 
     public func dismissRoot(animated: Bool) {
+        let presentedViewController = presentingViewController.presentedViewController
         presentingViewController.dismiss(animated: animated) { [weak self] in
-            guard let presentedViewController = self?.presentingViewController.presentedViewController else { return }
+            guard let presentedViewController = presentedViewController else { return }
 
             self?.notifyObserverAboutDismiss(of: presentedViewController)
         }

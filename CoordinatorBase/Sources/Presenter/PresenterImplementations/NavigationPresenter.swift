@@ -28,7 +28,10 @@ public class NavigationPresenter: NavigablePresenting {
 
     public func dismissRoot(animated: Bool) {
         navigationController.dismiss(animated: animated) { [weak self] in
-            self?.navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
+            guard let navigationController = self?.navigationController else { return }
+
+            navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
+            self?.notifyObserverAboutDismiss(of: navigationController)
         }
     }
 }
