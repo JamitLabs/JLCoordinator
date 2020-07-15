@@ -26,6 +26,19 @@ open class ModalPresenter: ModalPresenting {
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         dismissModally(viewController, animated: animated)
     }
+
+    public func dismissRoot(animated: Bool) {
+        let presentedViewController = presentingViewController.presentedViewController
+        // If the presentedViewController is not nil the presentedViewController is dismissed.
+        // If the presentedViewController is nil the presentingViewController is dismissed instead.
+        // If the dimiss was triggered in a view which is presented by this
+        // Presenter then the normal behaviour is that the presentedViewController is dismissed.
+        presentingViewController.dismiss(animated: animated) { [weak self] in
+            guard let presentedViewController = presentedViewController else { return }
+
+            self?.notifyObserverAboutDismiss(of: presentedViewController)
+        }
+    }
 }
 
 extension ModalPresenter: AdaptivePresentationControllerDelegate {

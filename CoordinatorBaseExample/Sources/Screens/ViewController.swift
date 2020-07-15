@@ -8,6 +8,7 @@ protocol ViewControllerDelegate: AnyObject {
     func didTriggerPushViewController(in viewController: ViewController)
     func didTriggerModalTabController(in viewController: ViewController)
     func didTriggerCloseButton(in viewController: ViewController)
+    func didTriggerCloseRootButton(in viewController: ViewController)
 }
 
 final class ViewController: UIViewController {
@@ -23,6 +24,7 @@ final class ViewController: UIViewController {
     @IBOutlet private var pushViewControllerButton: UIButton!
     @IBOutlet private var modalTabControllerButton: UIButton!
     @IBOutlet private var closeButton: UIButton!
+    @IBOutlet private var closeRootButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,5 +50,9 @@ final class ViewController: UIViewController {
 
     @IBAction private func didTriggerCloseButton(_ sender: UIButton) {
         delegate?.didTriggerCloseButton(in: self)
+    }
+
+    @IBAction private func didTriggerCloseRootButton(_ sender: UIButton) {
+        delegate?.didTriggerCloseRootButton(in: self)
     }
 }

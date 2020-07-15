@@ -7,6 +7,7 @@ import CoordinatorBase
 final class MockPresenter: Presenter {
     var presentCallBack: (() -> Void)?
     var dismissCallBack: (() -> Void)?
+    var dismissRootCallBack: (() -> Void)?
 
     var observers: WeakCache<PresenterObserving> = .init()
 
@@ -17,11 +18,16 @@ final class MockPresenter: Presenter {
     func present(_ viewController: UIViewController, animated: Bool) {
         presentCallBack?()
     }
+
+    func dismissRoot(animated: Bool) {
+        dismissRootCallBack?()
+    }
 }
 
 final class MockTabPresenter: Presenter, TabPresenting {
     var presentCallBack: (() -> Void)?
     var dismissCallBack: (() -> Void)?
+    var dismissRootCallBack: (() -> Void)?
 
     var observers: WeakCache<PresenterObserving> = .init()
     var tabBarController: UITabBarController
@@ -36,6 +42,10 @@ final class MockTabPresenter: Presenter, TabPresenting {
 
     func present(_ viewController: UIViewController, animated: Bool) {
         presentCallBack?()
+    }
+
+    func dismissRoot(animated: Bool) {
+        dismissRootCallBack?()
     }
 }
 
