@@ -51,7 +51,7 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     }
 
     public func dismissRoot(animated: Bool) {
-        navigationController?.dismiss(animated: animated) { [weak self] in
+        navigationController.dismiss(animated: animated) { [weak self] in
             guard let navigationController = self?.navigationController else { return }
 
             navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
