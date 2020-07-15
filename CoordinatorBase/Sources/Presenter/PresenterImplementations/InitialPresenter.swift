@@ -12,6 +12,8 @@ public class InitialPresenter: InitialPresenting {
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = false) {
+        guard window.rootViewController === viewController else { return }
+
         window.isHidden = true
         notifyObserverAboutDismiss(of: viewController)
     }
