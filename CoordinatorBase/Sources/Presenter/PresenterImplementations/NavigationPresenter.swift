@@ -2,25 +2,28 @@
 
 import UIKit
 
-public class NavigationPresenter: Presenter {
+public class NavigationPresenter: NavigablePresenting {
     public let observers: WeakCache<PresenterObserving> = .init()
     public let navigationController: UINavigationController
     private let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public init(navigationController: UINavigationController) {
+        assert(
+            navigationController.viewControllers.isEmpty,
+            "Trying to intialise NavigationPresenter with an non empty UINavigationController. This is not allowed!"
+        )
+
         self.navigationController = navigationController
         delegateWrapper.delegate = self
         navigationController.delegate = delegateWrapper
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
-        navigationController.pushViewController(viewController, animated: animated)
+        push(viewController, animated: animated)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
-        guard navigationController.topViewController === viewController else { return }
-
-        navigationController.popViewController(animated: animated)
+        pop(viewController, animated: animated)
     }
 }
 

@@ -18,9 +18,7 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
 
         navigationController.pushViewController(viewController, animated: animated)
         navigationController.tabBarItem = viewController.tabBarItem
-        let currentViewControllers = tabBarController.viewControllers ?? []
-        tabBarController.setViewControllers(currentViewControllers + [navigationController], animated: animated)
-        notifyObserverAboutPresentation(of: viewController)
+        presentOnTab(navigationController, animated: animated)
     }
 
     override public func dismiss(_ viewController: UIViewController, animated: Bool = true) {

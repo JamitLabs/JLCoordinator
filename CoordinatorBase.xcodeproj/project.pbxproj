@@ -37,6 +37,9 @@
 		C93C98BC24AF1489003F8791 /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */; };
 		C93C98BE24AF29A4003F8791 /* ViewCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */; };
 		C93C98C024AF4B10003F8791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */; };
+		C947052524BC7A0300479ABB /* NavigablePresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947052424BC7A0300479ABB /* NavigablePresenting.swift */; };
+		C947052724BC7A9100479ABB /* ModalPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947052624BC7A9100479ABB /* ModalPresenting.swift */; };
+		C947052924BC81DD00479ABB /* InitialPresenting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C947052824BC81DD00479ABB /* InitialPresenting.swift */; };
 		C968C08024ADCB070056A3BA /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C968C07F24ADCB070056A3BA /* RandomColor.swift */; };
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
@@ -124,6 +127,9 @@
 		C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C947052424BC7A0300479ABB /* NavigablePresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigablePresenting.swift; sourceTree = "<group>"; };
+		C947052624BC7A9100479ABB /* ModalPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenting.swift; sourceTree = "<group>"; };
+		C947052824BC81DD00479ABB /* InitialPresenting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenting.swift; sourceTree = "<group>"; };
 		C968C07F24ADCB070056A3BA /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
@@ -259,6 +265,9 @@
 			isa = PBXGroup;
 			children = (
 				B4961D852493983D00D19CEB /* Presenter.swift */,
+				C947052824BC81DD00479ABB /* InitialPresenting.swift */,
+				C947052624BC7A9100479ABB /* ModalPresenting.swift */,
+				C947052424BC7A0300479ABB /* NavigablePresenting.swift */,
 				B4961D922493983D00D19CEB /* PresenterObserving.swift */,
 				B4961D862493983D00D19CEB /* DelegateWrapper */,
 				B4961D892493983D00D19CEB /* PresenterImplementations */,
@@ -597,6 +606,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C947052524BC7A0300479ABB /* NavigablePresenting.swift in Sources */,
 				B4961D9D2493983D00D19CEB /* PresenterObserving.swift in Sources */,
 				B4961D992493983D00D19CEB /* ModalNavigationPresenter.swift in Sources */,
 				B4961D982493983D00D19CEB /* TabNavigationPresenter.swift in Sources */,
@@ -606,6 +616,8 @@
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,
 				B4961D9B2493983D00D19CEB /* InitialPresenter.swift in Sources */,
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
+				C947052724BC7A9100479ABB /* ModalPresenting.swift in Sources */,
+				C947052924BC81DD00479ABB /* InitialPresenting.swift in Sources */,
 				B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */,
 				B4961D932493983D00D19CEB /* Presenter.swift in Sources */,
 				B4961D9C2493983D00D19CEB /* NavigationPresenter.swift in Sources */,
