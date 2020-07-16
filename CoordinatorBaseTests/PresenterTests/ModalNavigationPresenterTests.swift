@@ -41,9 +41,13 @@ class ModalNavigationPresenterTests: XCTestCase {
         }
         
         let waitForObserverCall = expectation(description: "Observer called")
-        observer.didPresentViewControllerClosure = { presenter, viewController in
-            XCTAssertTrue(presenter === presenter)
-            XCTAssertTrue(viewController === viewControllerToPresent)
+        waitForObserverCall.expectedFulfillmentCount = 2
+        observer.didPresentViewControllerClosure = { observedPresenter, viewController in
+            XCTAssertTrue(presenter === observedPresenter)
+            XCTAssertTrue(
+                viewController === viewControllerToPresent
+                || viewController is UINavigationController
+            )
             waitForObserverCall.fulfill()
         }
 
@@ -57,51 +61,28 @@ class ModalNavigationPresenterTests: XCTestCase {
         let presenter: ModalNavigationPresenter = .init(presentingViewController: presentingViewController)
         presenter.register(observer)
 
-        let rootViewController: UIViewController = .init()
-        validate(
-            that: rootViewController,
-            presentedOnMock: presentingViewController,
-            presentedBy: presenter,
-            observedBy: observer
-        )
+        let mockNavigationController: MockNavigationController = .init(rootViewController: .init())
+        mockNavigationController.mockPresentingViewController = presentingViewController
+        presenter.navigationController = mockNavigationController
 
         let viewControllerToPresent: UIViewController = .init()
         let waitExceptation = expectation(description: "Wait until push is done")
         waitExceptation.expectedFulfillmentCount = 2
 
+        mockNavigationController.didCallPushViewController = { viewController in
+            XCTAssertTrue(viewControllerToPresent === viewController)
+            presenter.navigationController(mockNavigationController, didPush: viewController)
+            waitExceptation.fulfill()
+        }
+
         observer.didPresentViewControllerClosure = { observedPresenter, viewController in
             XCTAssertTrue(presenter === observedPresenter)
             XCTAssertTrue(viewController === viewControllerToPresent)
-            XCTAssertNotNil(viewController.navigationController)
-            XCTAssertTrue(viewController.navigationController?.viewControllers.count == 2)
-            XCTAssertTrue(viewController.navigationController?.viewControllers.last === viewControllerToPresent)
             waitExceptation.fulfill()
         }
 
         presenter.present(viewControllerToPresent)
         wait(for: [waitExceptation], timeout: 1)
-//
-//        let waitExceptation = expectation(description: "Wait until push is done")
-//        waitExceptation.expectedFulfillmentCount = 2
-//
-//        presentingViewController.didCallPresentFunction = { viewController, _ in
-//            XCTAssertTrue(viewController === viewControllerToPresent)
-//            waitExceptation.fulfill()
-//        }
-//
-//        navigationController.didCallPushViewController = { viewController in
-//            presenter.navigationController(navigationController, didPush: viewController)
-//            waitExceptation.fulfill()
-//        }
-//
-//        let viewControllerToPush: UIViewController = .init()
-//        observer.didPresentViewControllerClosure = { _, viewController in
-//            XCTAssertTrue(viewController === viewControllerToPush)
-//            waitExceptation.fulfill()
-//        }
-//
-//        presenter.present(viewControllerToPush)
-//        wait(for: [waitExceptation], timeout: 1)
     }
 
     func testPopViewController() throws {
