@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4489D2D24BE047200EF394F /* MockNavigationController.swift */; };
+		B4489D3024BE079100EF394F /* ModalNavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */; };
 		B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E793249C911A002053C2 /* MockPresentingViewController.swift */; };
 		B448E796249C93DF002053C2 /* MockPresenterObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E795249C93DF002053C2 /* MockPresenterObserving.swift */; };
 		B448E799249C994A002053C2 /* NavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E798249C994A002053C2 /* NavigationPresenterTests.swift */; };
@@ -98,6 +99,7 @@
 
 /* Begin PBXFileReference section */
 		B4489D2D24BE047200EF394F /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
+		B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationPresenterTests.swift; sourceTree = "<group>"; };
 		B448E793249C911A002053C2 /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
 		B448E795249C93DF002053C2 /* MockPresenterObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterObserving.swift; sourceTree = "<group>"; };
 		B448E798249C994A002053C2 /* NavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPresenterTests.swift; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
 				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
 				B448E798249C994A002053C2 /* NavigationPresenterTests.swift */,
+				B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -662,6 +665,7 @@
 				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
 				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
 				B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */,
+				B4489D3024BE079100EF394F /* ModalNavigationPresenterTests.swift in Sources */,
 				B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
