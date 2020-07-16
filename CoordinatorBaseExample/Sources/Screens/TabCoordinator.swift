@@ -3,8 +3,18 @@
 import CoordinatorBase
 import UIKit
 
-final class TabCoordinator: Coordinator {
+final class TabCoordinator: Coordinator, CoordinatorObserving {
     private let tabBarController: UITabBarController = .init()
+
+    override init(presenter: Presenter) {
+        super.init(presenter: presenter)
+
+        CoordinatorCounter.shared.register(self)
+    }
+
+    deinit {
+        CoordinatorCounter.shared.unregister(self)
+    }
 
     override func start() {
         presenter.present(tabBarController, animated: true)
@@ -20,5 +30,11 @@ final class TabCoordinator: Coordinator {
         secondCoordinator.start()
         add(childCoordinator: thirdCoordinator)
         thirdCoordinator.start()
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
+        guard viewController === tabBarController else { return }
+
+        stop()
     }
 }

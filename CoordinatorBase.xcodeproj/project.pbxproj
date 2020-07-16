@@ -12,6 +12,7 @@
 		B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E793249C911A002053C2 /* MockPresentingViewController.swift */; };
 		B448E796249C93DF002053C2 /* MockPresenterObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E795249C93DF002053C2 /* MockPresenterObserving.swift */; };
 		B448E799249C994A002053C2 /* NavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E798249C994A002053C2 /* NavigationPresenterTests.swift */; };
+		B48318BA24C1038300312CC0 /* CoordinatorCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48318B924C1038300312CC0 /* CoordinatorCounter.swift */; };
 		B4961D3E2493902600D19CEB /* CoordinatorBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4961D342493902600D19CEB /* CoordinatorBase.framework */; };
 		B4961D432493902600D19CEB /* CoordinatorBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961D422493902600D19CEB /* CoordinatorBaseTests.swift */; };
 		B4961D452493902600D19CEB /* CoordinatorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = B4961D372493902600D19CEB /* CoordinatorBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -103,6 +104,7 @@
 		B448E793249C911A002053C2 /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
 		B448E795249C93DF002053C2 /* MockPresenterObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresenterObserving.swift; sourceTree = "<group>"; };
 		B448E798249C994A002053C2 /* NavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPresenterTests.swift; sourceTree = "<group>"; };
+		B48318B924C1038300312CC0 /* CoordinatorCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorCounter.swift; sourceTree = "<group>"; };
 		B4961D342493902600D19CEB /* CoordinatorBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CoordinatorBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4961D372493902600D19CEB /* CoordinatorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoordinatorBase.h; sourceTree = "<group>"; };
 		B4961D382493902600D19CEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -425,6 +427,7 @@
 			isa = PBXGroup;
 			children = (
 				C968C07F24ADCB070056A3BA /* RandomColor.swift */,
+				B48318B924C1038300312CC0 /* CoordinatorCounter.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 			files = (
 				B4961D592493912B00D19CEB /* ViewController.swift in Sources */,
 				C968C08024ADCB070056A3BA /* RandomColor.swift in Sources */,
+				B48318BA24C1038300312CC0 /* CoordinatorCounter.swift in Sources */,
 				C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */,
 				C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */,
 				B4961D552493912B00D19CEB /* AppDelegate.swift in Sources */,

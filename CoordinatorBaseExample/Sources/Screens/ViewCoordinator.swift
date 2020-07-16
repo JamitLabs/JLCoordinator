@@ -3,12 +3,38 @@
 import CoordinatorBase
 import UIKit
 
-final class ViewCoordinator: Coordinator {
+final class ViewCoordinator: Coordinator, CoordinatorObserving {
     private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil).instantiateViewController(identifier: "ViewController")
+
+    override init(presenter: Presenter) {
+        super.init(presenter: presenter)
+
+        CoordinatorCounter.shared.register(self)
+    }
+
+    deinit {
+        CoordinatorCounter.shared.unregister(self)
+    }
 
     override func start() {
         viewController.delegate = self
         presenter.present(viewController, animated: true)
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
+        guard viewController === self.viewController else { return }
+
+        stop()
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
+        guard navigationController === viewController.navigationController else { return }
+
+        stop()
+    }
+
+    func coordinatorCounter(_ counter: CoordinatorCounter, changedCountTo count: Int) {
+        viewController.coordinatorCount = count
     }
 }
 
