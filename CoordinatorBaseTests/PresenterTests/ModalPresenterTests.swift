@@ -1,10 +1,4 @@
-//
-//  ModalPresenterTests.swift
-//  CoordinatorBaseTests
-//
-//  Created by Jens Krug on 17.06.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 @testable import CoordinatorBase
 import XCTest

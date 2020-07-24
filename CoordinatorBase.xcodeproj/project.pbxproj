@@ -41,6 +41,7 @@
 		B4961DAB249763CB00D19CEB /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DAA249763CB00D19CEB /* MockCoordinator.swift */; };
 		B4961DB2249776CE00D19CEB /* InitialPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */; };
 		B4D1DC44249A1253008E291E /* ModalPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */; };
+		B4FDA8B224CAD3360055386E /* CoordinatorObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FDA8B124CAD3360055386E /* CoordinatorObserving.swift */; };
 		C93C98BC24AF1489003F8791 /* TabCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */; };
 		C93C98BE24AF29A4003F8791 /* ViewCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */; };
 		C93C98C024AF4B10003F8791 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */; };
@@ -138,6 +139,7 @@
 		B4961DAA249763CB00D19CEB /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
 		B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialPresenterTests.swift; sourceTree = "<group>"; };
 		B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresenterTests.swift; sourceTree = "<group>"; };
+		B4FDA8B124CAD3360055386E /* CoordinatorObserving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorObserving.swift; sourceTree = "<group>"; };
 		C93C98BB24AF1489003F8791 /* TabCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BD24AF29A4003F8791 /* ViewCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinatorTests.swift; sourceTree = "<group>"; };
 		C93C98BF24AF4B10003F8791 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 			children = (
 				C968C07F24ADCB070056A3BA /* RandomColor.swift */,
 				B48318B924C1038300312CC0 /* CoordinatorCounter.swift */,
+				B4FDA8B124CAD3360055386E /* CoordinatorObserving.swift */,
 			);
 			path = Basic;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FDA8B224CAD3360055386E /* CoordinatorObserving.swift in Sources */,
 				B4961D592493912B00D19CEB /* ViewController.swift in Sources */,
 				C968C08024ADCB070056A3BA /* RandomColor.swift in Sources */,
 				B48318BA24C1038300312CC0 /* CoordinatorCounter.swift in Sources */,

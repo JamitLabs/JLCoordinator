@@ -1,23 +1,9 @@
-//
-//  CoordinatorCounter.swift
-//  CoordinatorBaseExample
-//
-//  Created by Jens Krug on 16.07.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import CoordinatorBase
 import Foundation
 
-protocol CoordinatorObserving: AnyObject {
-    func coordinatorCounter(_ counter: CoordinatorCounter, changedCountTo count: Int)
-}
-
-extension CoordinatorObserving {
-    func coordinatorCounter(_ counter: CoordinatorCounter, changedCountTo count: Int) { /* NOOP */ }
-}
-
-final class CoordinatorCounter {
+public final class CoordinatorCounter {
     static let shared: CoordinatorCounter = .init()
 
     let observers: WeakCache<CoordinatorObserving> = .init()
