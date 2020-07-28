@@ -16,6 +16,7 @@ final class MockPresenter: Presenter {
     }
 
     func present(_ viewController: UIViewController, animated: Bool) {
+        _ = viewController.view
         presentCallBack?()
     }
 
@@ -41,6 +42,7 @@ final class MockTabPresenter: Presenter, TabPresenting {
     }
 
     func present(_ viewController: UIViewController, animated: Bool) {
+        _ = viewController.view
         presentCallBack?()
     }
 
