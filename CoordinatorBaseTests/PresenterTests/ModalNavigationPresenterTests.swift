@@ -6,7 +6,7 @@ import XCTest
 class ModalNavigationPresenterTests: XCTestCase {
     func testInitialPresentationOfViewController() throws {
         let observer: MockPresenterObserving = .init()
-        let presentingViewController = MockPresentingViewController()
+        let presentingViewController: MockPresentingViewController = .init()
         let modalNavigationPresenter: ModalNavigationPresenter = .init(presentingViewController: presentingViewController)
         let viewControllerToPresent: UIViewController = .init()
         modalNavigationPresenter.register(observer)
@@ -25,7 +25,7 @@ class ModalNavigationPresenterTests: XCTestCase {
         presentedBy presenter: ModalNavigationPresenter,
         observedBy observer: MockPresenterObserving
     ) {
-        let finishedPresentation = XCTestExpectation(description: "Wait until presentation has been finished!")
+        let finishedPresentation = expectation(description: "Wait until presentation has been finished!")
         
         presentingViewController.didCallPresentFunction = { viewController, flag in
             XCTAssertTrue(viewController is UINavigationController)
@@ -80,31 +80,34 @@ class ModalNavigationPresenterTests: XCTestCase {
     }
 
     func testPopViewController() throws {
-//        let observer: MockPresenterObserving = .init()
-//        let navigationController: MockNavigationController = .init()
-//        let presenter: ModalNavigationPresenter = .init(navigationController: navigationController)
-//        let viewControllerToPop: UIViewController = .init()
-//        navigationController.storedViewController = viewControllerToPop
-//
-//        presenter.register(observer)
-//
-//        let waitForNavigationControllerCall = expectation(description: "Wait until NavigationController is called.")
-//        let waitExceptation = expectation(description: "Wait until pop is done")
-//
-//        navigationController.didCallPopViewController = { viewController in
-//            guard let viewController = viewController else { return XCTFail("ViewController should be set!") }
-//
-//            presenter.navigationController(navigationController, didPop: viewController)
-//            waitForNavigationControllerCall.fulfill()
-//        }
-//
-//        observer.didDismissViewControllerClosure = { _, viewController in
-//            XCTAssertTrue(viewController === viewControllerToPop)
-//            waitExceptation.fulfill()
-//        }
-//
-//        presenter.dismiss(viewControllerToPop)
-//        wait(for: [waitForNavigationControllerCall, waitExceptation], timeout: 1)
+        let observer: MockPresenterObserving = .init()
+        let navigationController: MockNavigationController = .init()
+        let mockPresentingViewController: MockPresentingViewController = .init()
+        let presenter: ModalNavigationPresenter = .init(presentingViewController: mockPresentingViewController)
+        presenter.navigationController = navigationController
+
+        let viewControllerToPop: UIViewController = .init()
+        navigationController.storedViewController = viewControllerToPop
+
+        presenter.register(observer)
+
+        let waitForNavigationControllerCall = expectation(description: "Wait until NavigationController is called.")
+        let waitExceptation = expectation(description: "Wait until pop is done")
+
+        navigationController.didCallPopViewController = { viewController in
+            guard let viewController = viewController else { return XCTFail("ViewController should be set!") }
+
+            presenter.navigationController(navigationController, didPop: viewController)
+            waitForNavigationControllerCall.fulfill()
+        }
+
+        observer.didDismissViewControllerClosure = { _, viewController in
+            XCTAssertTrue(viewController === viewControllerToPop)
+            waitExceptation.fulfill()
+        }
+
+        presenter.dismiss(viewControllerToPop)
+        wait(for: [waitForNavigationControllerCall, waitExceptation], timeout: 1)
     }
 
     func testViewControllerIsNotPoppedIfItIsNotTop() {

@@ -18,7 +18,7 @@ class ModalPresenterTests: XCTestCase {
         let viewControllerToPresent: UIViewController = .init()
 
         modalPresenter.register(observing)
-        let finishedPresentation = XCTestExpectation(description: "Wait until presentation has been finished!")
+        let finishedPresentation = expectation(description: "Wait until presentation has been finished!")
         finishedPresentation.expectedFulfillmentCount = 2
 
         presentingViewController.didCallPresentFunction = { viewController, flag in
@@ -44,7 +44,7 @@ class ModalPresenterTests: XCTestCase {
 
         modalPresenter.register(observing)
 
-        let finishedPresentation = XCTestExpectation(description: "Wait until presentation has been finished!")
+        let finishedPresentation = expectation(description: "Wait until presentation has been finished!")
 
         finishedPresentation.expectedFulfillmentCount = 2
 
@@ -71,24 +71,19 @@ class ModalPresenterTests: XCTestCase {
         let modalPresenter: ModalPresenter = .init(presentingViewController: presentingViewController)
         let viewControllerToDismiss: MockPresentingViewController = .init()
 
+        let didCallDismissExpectation = expectation(description: "Wait until dismiss has been finished!")
+        didCallDismissExpectation.isInverted = true
         presentingViewController.presentedViewControllerForTest = { UIViewController() }
         viewControllerToDismiss.didCallDismissFunction = { viewController, flag in
-            XCTFail("Dismiss should never be called on this ViewController")
+            didCallDismissExpectation.fulfill()
         }
 
         observing.didDismissViewControllerClosure = { presenter, viewController in
-            XCTFail("Dismiss should never be called on this ViewController")
+            didCallDismissExpectation.fulfill()
         }
 
         modalPresenter.dismiss(viewControllerToDismiss, animated: true)
-
-        let finishedPresentation = XCTestExpectation(description: "Wait until presentation has been finished!")
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.75) {
-            finishedPresentation.fulfill()
-        }
-
-        wait(for: [finishedPresentation], timeout: 1)
+        wait(for: [didCallDismissExpectation], timeout: 1)
     }
 
     func testAdaptiveDismissNotifying() throws {
@@ -97,7 +92,7 @@ class ModalPresenterTests: XCTestCase {
         modalPresenter.register(observing)
 
         let viewControllerToDismiss: UIViewController = .init()
-        let finishedPresentation = XCTestExpectation(description: "Wait until presentation has been finished!")
+        let finishedPresentation = expectation(description: "Wait until dismiss has been finished!")
 
         observing.didDismissViewControllerClosure = { presenter, viewController in
             XCTAssertTrue(presenter === modalPresenter)

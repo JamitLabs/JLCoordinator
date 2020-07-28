@@ -28,4 +28,16 @@ class InitialPresenterTests: XCTestCase {
         presenter.dismiss(viewController)
         XCTAssertTrue(window.isHidden)
     }
+
+    func testDismissRoot() throws {
+        let window: UIWindow = UIWindow()
+        let presenter: InitialPresenter = InitialPresenter(window: window)
+        let viewController = UIViewController()
+        presenter.present(viewController)
+        XCTAssertTrue(presenter.window.isKeyWindow)
+        XCTAssertTrue(presenter.window.rootViewController === viewController)
+        XCTAssertTrue(viewController.isViewLoaded)
+        presenter.dismissRoot(animated: true)
+        XCTAssertTrue(window.isHidden)
+    }
 }
