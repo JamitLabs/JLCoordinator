@@ -5,7 +5,7 @@ import UIKit
 public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     public let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
-    public var navigationController: UINavigationController = .init()
+    public var navigationController: UINavigationController?
     let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public let observers: WeakCache<PresenterObserving> = .init()
@@ -20,14 +20,16 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         andRootViewController viewController: UIViewController,
         animated: Bool
     ) {
-        navigationController.delegate = delegateWrapper
-        navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
-        navigationController.addChild(viewController)
-        presentModally(navigationController, animated: true)
+        navigationController = .init(rootViewController: viewController)
+        navigationController?.delegate = delegateWrapper
+        navigationController?.presentationController?.delegate = adaptivePresentationDelegateWrapper
+        presentModally(navigationController!, animated: true) { [weak self] in
+            self?.notifyObserverAboutPresentation(of: viewController)
+        }
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
-        guard navigationController.presentingViewController == nil else {
+        guard navigationController?.presentingViewController == nil else {
             return push(viewController, animated: animated)
         }
 
@@ -35,25 +37,40 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
+
         if navigationController.viewControllers.first === viewController {
-            dismissModally(navigationController, animated: animated)
-        } else if navigationController.topViewController === viewController {
+            dismissModally(navigationController, animated: animated) { [weak self] in
+                self?.notifyObserverAboutPresentation(of: viewController)
+            }
+        } else {
             pop(viewController, animated: animated)
         }
     }
 
     public func dismiss(animated: Bool = true) {
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
+
         navigationController.dismiss(animated: animated) { [weak self] in
-            guard let topViewController = self?.navigationController.topViewController else { return }
+            guard let topViewController = navigationController.topViewController else { return }
 
             self?.notifyObserverAboutDismiss(of: topViewController)
         }
     }
 
     public func dismissRoot(animated: Bool) {
-        navigationController.dismiss(animated: animated) { [weak self] in
-            guard let navigationController = self?.navigationController else { return }
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
 
+        navigationController.dismiss(animated: animated) { [weak self] in
             navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
             self?.notifyObserverAboutDismiss(of: navigationController)
         }
@@ -76,5 +93,12 @@ extension ModalNavigationPresenter: NavigationControllerDelegate {
         didPush viewController: UIViewController
     ) {
         notifyObserverAboutPresentation(of: viewController)
+    }
+
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didPopToRootViewController rootViewController: UIViewController
+    ) {
+        notifyObserverAboutDismissOfAllViewControllers(but: rootViewController, of: navigationController)
     }
 }

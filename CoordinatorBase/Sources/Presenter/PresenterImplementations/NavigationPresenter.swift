@@ -4,7 +4,7 @@ import UIKit
 
 public class NavigationPresenter: NavigablePresenting {
     public let observers: WeakCache<PresenterObserving> = .init()
-    public let navigationController: UINavigationController
+    public var navigationController: UINavigationController?
     private let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public init(navigationController: UINavigationController) {
@@ -27,7 +27,7 @@ public class NavigationPresenter: NavigablePresenting {
     }
 
     public func dismissRoot(animated: Bool) {
-        navigationController.dismiss(animated: animated) { [weak self] in
+        navigationController?.dismiss(animated: animated) { [weak self] in
             guard let navigationController = self?.navigationController else { return }
 
             navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
@@ -49,5 +49,12 @@ extension NavigationPresenter: NavigationControllerDelegate {
         didPush viewController: UIViewController
     ) {
         notifyObserverAboutPresentation(of: viewController)
+    }
+
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didPopToRootViewController rootViewController: UIViewController
+    ) {
+        notifyObserverAboutDismissOfAllViewControllers(but: rootViewController, of: navigationController)
     }
 }

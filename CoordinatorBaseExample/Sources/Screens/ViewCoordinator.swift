@@ -3,12 +3,50 @@
 import CoordinatorBase
 import UIKit
 
-final class ViewCoordinator: Coordinator {
-    private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil).instantiateViewController(identifier: "ViewController")
+final class ViewCoordinator: Coordinator, CoordinatorObserving {
+    private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil)
+        .instantiateViewController(identifier: "ViewController")
+
+    override init(presenter: Presenter) {
+        super.init(presenter: presenter)
+
+        // NOTE: This is just used to supervise the number of coordinatores and the allocation and deallocation of them.
+        CoordinatorCounter.shared.register(self)
+    }
 
     override func start() {
         viewController.delegate = self
         presenter.present(viewController, animated: true)
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
+        guard viewController === self.viewController else { return }
+
+        stop()
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
+        guard navigationController === viewController.navigationController else { return }
+
+        stop()
+    }
+
+    override func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        if viewController === rootViewController {
+            childCoordinators.forEach { $0.stop() }
+        }
+    }
+
+    func coordinatorCounter(_ counter: CoordinatorCounter, changedCountTo count: Int) {
+        viewController.coordinatorCount = count
+    }
+
+    deinit {
+        CoordinatorCounter.shared.unregister(self)
     }
 }
 
@@ -20,7 +58,9 @@ extension ViewCoordinator: ViewControllerDelegate {
     }
 
     func didTriggerModalNavigationController(in viewController: ViewController) {
-        let viewCoordinator: ViewCoordinator = .init(presenter: ModalNavigationPresenter(presentingViewController: viewController))
+        let viewCoordinator: ViewCoordinator = .init(
+            presenter: ModalNavigationPresenter(presentingViewController: viewController)
+        )
         add(childCoordinator: viewCoordinator)
         viewCoordinator.start()
     }

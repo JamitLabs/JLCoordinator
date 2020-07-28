@@ -19,6 +19,7 @@ final class ViewCoordinatorTests: XCTestCase {
     func testDidTriggerModalViewController() {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
+        viewCoordinator.start()
         viewCoordinator.didTriggerModalViewController(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }
@@ -26,6 +27,7 @@ final class ViewCoordinatorTests: XCTestCase {
     func testDidTriggerModalNavigationController() {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
+        viewCoordinator.start()
         viewCoordinator.didTriggerModalNavigationController(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }
@@ -33,6 +35,7 @@ final class ViewCoordinatorTests: XCTestCase {
     func testDidTriggerPushViewController() {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
+        viewCoordinator.start()
         viewCoordinator.didTriggerPushViewController(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }
@@ -40,6 +43,7 @@ final class ViewCoordinatorTests: XCTestCase {
     func testDidTriggerModalTabController() {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
+        viewCoordinator.start()
         viewCoordinator.didTriggerModalTabController(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }
@@ -47,6 +51,7 @@ final class ViewCoordinatorTests: XCTestCase {
     func testDidTriggerModalTabNavigationController() {
         let mockPresenter: MockPresenter = .init()
         let viewCoordinator: ViewCoordinator = .init(presenter: mockPresenter)
+        viewCoordinator.start()
         viewCoordinator.didTriggerModalTabNavigationController(in: .init())
         XCTAssert(viewCoordinator.childCoordinators.count == 1)
     }

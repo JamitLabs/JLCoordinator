@@ -12,7 +12,10 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
     }
 
     override public func present(_ viewController: UIViewController, animated: Bool = true) {
-        guard tabBarController.viewControllers?.contains(navigationController) != true else {
+        guard
+            let navigationController = navigationController,
+            tabBarController.viewControllers?.contains(navigationController) != true
+        else {
             return super.present(viewController, animated: animated)
         }
 
@@ -23,6 +26,7 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
 
     override public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
         guard
+            let navigationController = navigationController,
             viewController === navigationController.viewControllers.first,
             tabBarController.viewControllers?.contains(navigationController) == true
         else {

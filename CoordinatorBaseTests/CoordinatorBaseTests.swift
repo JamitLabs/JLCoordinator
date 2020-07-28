@@ -1,10 +1,4 @@
-//
-//  CoordinatorBaseTests.swift
-//  CoordinatorBaseTests
-//
-//  Created by Jens on 12.06.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import XCTest
 @testable import CoordinatorBase
@@ -30,5 +24,4 @@ class CoordinatorBaseTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

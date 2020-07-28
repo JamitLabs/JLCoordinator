@@ -19,17 +19,28 @@ final class ViewController: UIViewController {
         set { lazyTabBarItem = newValue }
     }
 
+    var coordinatorCount: Int = 0 {
+        didSet {
+            guard isViewLoaded else { return }
+
+            coordinatorCountLabel.text = "\(coordinatorCount)"
+        }
+    }
+
     @IBOutlet private var modalViewControllerButton: UIButton!
     @IBOutlet private var modalNavigationControllerButton: UIButton!
     @IBOutlet private var pushViewControllerButton: UIButton!
     @IBOutlet private var modalTabControllerButton: UIButton!
     @IBOutlet private var closeButton: UIButton!
     @IBOutlet private var closeRootButton: UIButton!
+    @IBOutlet private var coordinatorCountLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = RandomColor.choose()
+        // NOTE: CoordinatorCountLabel is optional for running unit tests (loading view is not working as workaround)
+        coordinatorCountLabel?.text = "\(coordinatorCount)"
     }
 
     @IBAction private func didTriggerModalViewControllerButton(_ sender: UIButton) {

@@ -1,10 +1,4 @@
-//
-//  File.swift
-//  CoordinatorBaseTests
-//
-//  Created by Jens Krug on 15.06.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import CoordinatorBase
 import UIKit
@@ -14,7 +8,8 @@ final class MockCoordinator: Coordinator {
     var didStopAction: ((Coordinator) -> Void)?
     var didDismissAction: ((Presenter, UIViewController) -> Void)?
     var didPresentAction: ((Presenter, UIViewController) -> Void)?
-    var didDismissNavigationController: ((Presenter, UINavigationController) -> Void?)?
+    var didDismissNavigationController: ((Presenter, UINavigationController) -> Void)?
+    var didDismissAllViewControllerToRoot: ((Presenter, UINavigationController, UIViewController) -> Void)?
 
     override func start() {
         super.start()
@@ -44,5 +39,14 @@ final class MockCoordinator: Coordinator {
         super.presenter(presenter, didDismiss: navigationController)
 
         didDismissNavigationController?(presenter, navigationController)
+    }
+
+    override func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        super.presenter(presenter, didDismissAllViewControllersTo: rootViewController, of: navigationController)
+        didDismissAllViewControllerToRoot?(presenter, navigationController, rootViewController)
     }
 }

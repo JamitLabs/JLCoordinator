@@ -58,4 +58,12 @@ open class Coordinator: PresenterObserving {
     open func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
         // Override in sublclass
     }
+
+    open func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        // Override in subclass
+    }
 }

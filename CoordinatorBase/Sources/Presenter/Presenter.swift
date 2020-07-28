@@ -70,4 +70,13 @@ extension Presenter {
     public func notifyObserverAboutPresentation(of viewController: UIViewController) {
         observers.all.forEach { $0.presenter(self, didPresent: viewController) }
     }
+
+    public func notifyObserverAboutDismissOfAllViewControllers(
+        but rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        observers.all.forEach {
+            $0.presenter(self, didDismissAllViewControllersTo: rootViewController, of: navigationController)
+        }
+    }
 }

@@ -5,6 +5,9 @@ import UIKit
 protocol NavigationControllerDelegate: AnyObject {
     func navigationController(_ navigationController: UINavigationController, didPop viewController: UIViewController)
     func navigationController(_ navigationController: UINavigationController, didPush viewController: UIViewController)
+    func navigationController(
+        _ navigationController: UINavigationController, didPopToRootViewController rootViewController: UIViewController
+    )
 }
 
 final class NavigationControllerDelegateWrapper: NSObject, UINavigationControllerDelegate {
@@ -23,6 +26,10 @@ final class NavigationControllerDelegateWrapper: NSObject, UINavigationControlle
             !navigationController.viewControllers.contains(fromViewController)
         {
             delegate?.navigationController(navigationController, didPop: fromViewController)
+
+            if viewController === navigationController.viewControllers.first {
+                delegate?.navigationController(navigationController, didPopToRootViewController: viewController)
+            }
         } else if
             let toViewController = navigationController.transitionCoordinator?.viewController(forKey: .to),
             navigationController.viewControllers.contains(viewController),

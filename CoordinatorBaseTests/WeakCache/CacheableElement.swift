@@ -1,10 +1,4 @@
-//
-//  CacheableElement.swift
-//  CoordinatorBaseTests
-//
-//  Created by Jens on 12.06.20.
-//  Copyright © 2020 Jamit Labs. All rights reserved.
-//
+// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import Foundation
 
