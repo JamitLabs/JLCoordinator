@@ -2,11 +2,14 @@
 
 import UIKit
 
-/// `AdaptivePresentationControllerDelegate` is the delegate which gets informed from the `AdaptivePresentingControllerDelegateWrapper`
+// swiftlint:disable too_much_indentation
+/// `AdaptivePresentationControllerDelegate` is the delegate which gets informed from the
+/// `AdaptivePresentingControllerDelegateWrapper`
 protocol AdaptivePresentationControllerDelegate: AnyObject {
-     /// This function is called, if a modally presented `UIViewController` has been dismissed adaptive
-     ///
-     /// - parameter viewController: The dismissed `UIViewController`
+    // swiftlint:enable too_much_indentation
+    /// This function is called, if a modally presented `UIViewController` has been dismissed adaptive
+    ///
+    /// - parameter viewController: The dismissed `UIViewController`
     func adaptiveDidDismiss(_ viewController: UIViewController)
 }
 

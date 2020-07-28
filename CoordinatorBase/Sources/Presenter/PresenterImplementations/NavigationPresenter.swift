@@ -50,4 +50,11 @@ extension NavigationPresenter: NavigationControllerDelegate {
     ) {
         notifyObserverAboutPresentation(of: viewController)
     }
+
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didPopToRootViewController rootViewController: UIViewController
+    ) {
+        notifyObserverAboutDismissOfAllViewControllers(but: rootViewController, of: navigationController)
+    }
 }

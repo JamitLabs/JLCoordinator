@@ -37,31 +37,40 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
-        guard let navigationController = navigationController else { return }
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
 
         if navigationController.viewControllers.first === viewController {
             dismissModally(navigationController, animated: animated) { [weak self] in
                 self?.notifyObserverAboutPresentation(of: viewController)
             }
-        } else if navigationController.topViewController === viewController {
+        } else {
             pop(viewController, animated: animated)
         }
     }
 
     public func dismiss(animated: Bool = true) {
-        guard let navigationController = navigationController else { return }
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
 
         navigationController.dismiss(animated: animated) { [weak self] in
-            guard let topViewController = self?.navigationController?.topViewController else { return }
+            guard let topViewController = navigationController.topViewController else { return }
 
             self?.notifyObserverAboutDismiss(of: topViewController)
         }
     }
 
     public func dismissRoot(animated: Bool) {
-        navigationController?.dismiss(animated: animated) { [weak self] in
-            guard let navigationController = self?.navigationController else { return }
+        guard let navigationController = navigationController else {
+            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+            return
+        }
 
+        navigationController.dismiss(animated: animated) { [weak self] in
             navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
             self?.notifyObserverAboutDismiss(of: navigationController)
         }
@@ -84,5 +93,12 @@ extension ModalNavigationPresenter: NavigationControllerDelegate {
         didPush viewController: UIViewController
     ) {
         notifyObserverAboutPresentation(of: viewController)
+    }
+
+    func navigationController(
+        _ navigationController: UINavigationController,
+        didPopToRootViewController rootViewController: UIViewController
+    ) {
+        notifyObserverAboutDismissOfAllViewControllers(but: rootViewController, of: navigationController)
     }
 }

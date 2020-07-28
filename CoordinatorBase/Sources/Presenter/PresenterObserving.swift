@@ -24,4 +24,23 @@ public protocol PresenterObserving: AnyObject {
     ///     - presenter: the presenting `Presenter`
     ///     - navigationController: the dismissed `UINavigationController`
     func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController)
+
+    /// This function is called if the `presenter` didDismiss all `UIViewController`
+    /// but `rootViewController` of a `UINavigationController` stack.
+    ///
+    /// Use Case: Embedded `UINavigationController` in `UITabBarController`. If the `UITabBarItem` is tapped all
+    /// `UIViewController` are popped until `rootViewController` is the top most ViewController.
+    /// To handle this case and get informed about this behavior use this function.
+    /// This function is also called on a single popped or dismiss and the next presented `UIViewController` is the
+    /// `rootViewController`
+    ///
+    /// - parameters:
+    ///     - presenter: the presenting `Presenter`
+    ///     - rootViewController: The now presented rootViewController of the `UINavigationController`
+    ///     - navigationController: The `UINavigationController` which popped all `UIViewController`
+    func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    )
 }
