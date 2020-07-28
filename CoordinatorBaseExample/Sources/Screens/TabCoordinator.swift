@@ -9,25 +9,25 @@ final class TabCoordinator: Coordinator, CoordinatorObserving {
     override init(presenter: Presenter) {
         super.init(presenter: presenter)
 
+        // NOTE: This is just used to supervise the number of coordinatores and the allocation and deallocation of them.
         CoordinatorCounter.shared.register(self)
-    }
-
-    deinit {
-        CoordinatorCounter.shared.unregister(self)
     }
 
     override func start() {
         presenter.present(tabBarController, animated: true)
 
         let tabPresenter = TabPresenter(tabBarController: tabBarController)
-        let firstCoordinator = ViewCoordinator(presenter: tabPresenter)
-        let secondCoordinator = ViewCoordinator(presenter: tabPresenter)
         let tabNavigationCoordinator = TabNavigationPresenter(tabBarController: tabBarController)
-        let thirdCoordinator = ViewCoordinator(presenter: tabNavigationCoordinator)
+
+        let firstCoordinator = ViewCoordinator(presenter: tabPresenter)
         add(childCoordinator: firstCoordinator)
         firstCoordinator.start()
+
+        let secondCoordinator = ViewCoordinator(presenter: tabPresenter)
         add(childCoordinator: secondCoordinator)
         secondCoordinator.start()
+
+        let thirdCoordinator = ViewCoordinator(presenter: tabNavigationCoordinator)
         add(childCoordinator: thirdCoordinator)
         thirdCoordinator.start()
     }
@@ -36,5 +36,9 @@ final class TabCoordinator: Coordinator, CoordinatorObserving {
         guard viewController === tabBarController else { return }
 
         stop()
+    }
+
+    deinit {
+        CoordinatorCounter.shared.unregister(self)
     }
 }

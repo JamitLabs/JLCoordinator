@@ -39,7 +39,8 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = RandomColor.choose()
-        coordinatorCountLabel.text = "\(coordinatorCount)"
+        // NOTE: CoordinatorCountLabel is optional for running unit tests (loading view is not working as workaround)
+        coordinatorCountLabel?.text = "\(coordinatorCount)"
     }
 
     @IBAction private func didTriggerModalViewControllerButton(_ sender: UIButton) {

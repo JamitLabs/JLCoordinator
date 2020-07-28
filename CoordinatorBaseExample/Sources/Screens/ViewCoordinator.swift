@@ -4,16 +4,14 @@ import CoordinatorBase
 import UIKit
 
 final class ViewCoordinator: Coordinator, CoordinatorObserving {
-    private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil).instantiateViewController(identifier: "ViewController")
+    private let viewController: ViewController = UIStoryboard(name: "ViewController", bundle: nil)
+        .instantiateViewController(identifier: "ViewController")
 
     override init(presenter: Presenter) {
         super.init(presenter: presenter)
 
+        // NOTE: This is just used to supervise the number of coordinatores and the allocation and deallocation of them.
         CoordinatorCounter.shared.register(self)
-    }
-
-    deinit {
-        CoordinatorCounter.shared.unregister(self)
     }
 
     override func start() {
@@ -33,8 +31,22 @@ final class ViewCoordinator: Coordinator, CoordinatorObserving {
         stop()
     }
 
+    override func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        if viewController === rootViewController {
+            childCoordinators.forEach { $0.stop() }
+        }
+    }
+
     func coordinatorCounter(_ counter: CoordinatorCounter, changedCountTo count: Int) {
         viewController.coordinatorCount = count
+    }
+
+    deinit {
+        CoordinatorCounter.shared.unregister(self)
     }
 }
 
@@ -46,7 +58,9 @@ extension ViewCoordinator: ViewControllerDelegate {
     }
 
     func didTriggerModalNavigationController(in viewController: ViewController) {
-        let viewCoordinator: ViewCoordinator = .init(presenter: ModalNavigationPresenter(presentingViewController: viewController))
+        let viewCoordinator: ViewCoordinator = .init(
+            presenter: ModalNavigationPresenter(presentingViewController: viewController)
+        )
         add(childCoordinator: viewCoordinator)
         viewCoordinator.start()
     }

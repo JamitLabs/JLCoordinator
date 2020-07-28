@@ -1,7 +1,6 @@
 // Copyright © 2020 Jamit Labs GmbH. All rights reserved.
 
 import CoordinatorBase
-import Foundation
 
 public final class CoordinatorCounter {
     static let shared: CoordinatorCounter = .init()
