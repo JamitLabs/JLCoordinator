@@ -33,4 +33,14 @@ public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {
             return super.dismiss(viewController, animated: animated)
         }
     }
+
+    override public func dismissRoot(animated: Bool) {
+        guard tabBarController.presentingViewController != nil else { return }
+
+        tabBarController.dismiss(animated: animated) { [weak self] in
+            guard let self = self else { return }
+
+            self.notifyObserverAboutDismiss(of: self.tabBarController)
+        }
+    }
 }

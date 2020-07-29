@@ -27,10 +27,11 @@ public class NavigationPresenter: NavigablePresenting {
     }
 
     public func dismissRoot(animated: Bool) {
+        guard navigationController?.presentingViewController != nil else { return }
+
         navigationController?.dismiss(animated: animated) { [weak self] in
             guard let navigationController = self?.navigationController else { return }
 
-            navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
             self?.notifyObserverAboutDismiss(of: navigationController)
         }
     }

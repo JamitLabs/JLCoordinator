@@ -4,8 +4,8 @@ import UIKit
 
 public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
     public let presentingViewController: UIViewController
-    private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
     public var navigationController: UINavigationController?
+    private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
     let delegateWrapper: NavigationControllerDelegateWrapper = .init()
 
     public let observers: WeakCache<PresenterObserving> = .init()
@@ -51,27 +51,17 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         }
     }
 
-    public func dismiss(animated: Bool = true) {
-        guard let navigationController = navigationController else {
-            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
+    public func dismissRoot(animated: Bool = true) {
+        guard
+            presentingViewController.presentedViewController != nil,
+            presentingViewController.presentedViewController === navigationController
+        else {
             return
         }
 
-        navigationController.dismiss(animated: animated) { [weak self] in
-            guard let topViewController = navigationController.topViewController else { return }
+        presentingViewController.dismiss(animated: animated) { [weak self] in
+            guard let navigationController = self?.navigationController else { return }
 
-            self?.notifyObserverAboutDismiss(of: topViewController)
-        }
-    }
-
-    public func dismissRoot(animated: Bool) {
-        guard let navigationController = navigationController else {
-            NSLog("⚠️ UINavigationController is nil in %@ - \(#function).", String(describing: self))
-            return
-        }
-
-        navigationController.dismiss(animated: animated) { [weak self] in
-            navigationController.viewControllers.forEach { self?.notifyObserverAboutDismiss(of: $0) }
             self?.notifyObserverAboutDismiss(of: navigationController)
         }
     }
