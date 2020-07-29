@@ -40,7 +40,12 @@ open class Coordinator: PresenterObserving {
 
     open func removeFromParentCoordinator() {
         parentCoordinator?.childCoordinators.removeAll { $0 === self }
+        parentCoordinator?.didRemove(child: self)
         parentCoordinator = nil
+    }
+
+    open func didRemove(child: Coordinator) {
+        // Called if child has been removed from `childCoordinators` list
     }
 
     open func didStop(child: Coordinator) {

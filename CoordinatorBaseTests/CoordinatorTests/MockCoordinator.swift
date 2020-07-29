@@ -6,6 +6,7 @@ import UIKit
 final class MockCoordinator: Coordinator {
     var startAction: (() -> Void)?
     var didStopAction: ((Coordinator) -> Void)?
+    var didRemoveAction: ((Coordinator) -> Void)?
     var didDismissAction: ((Presenter, UIViewController) -> Void)?
     var didPresentAction: ((Presenter, UIViewController) -> Void)?
     var didDismissNavigationController: ((Presenter, UINavigationController) -> Void)?
@@ -21,6 +22,12 @@ final class MockCoordinator: Coordinator {
         super.didStop(child: child)
 
         didStopAction?(child)
+    }
+
+    override func didRemove(child: Coordinator) {
+        super.didRemove(child: child)
+
+        didRemoveAction?(child)
     }
 
     override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
