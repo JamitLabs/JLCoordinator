@@ -20,14 +20,17 @@ final class ViewCoordinator: Coordinator, CoordinatorObserving {
     }
 
     override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
-        guard viewController === self.viewController else { return }
+        guard
+            viewController === self.viewController ||
+            self.viewController.tabBarController === viewController
+        else {
+            return
+        }
 
         stop()
     }
 
     override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
-        guard navigationController === viewController.navigationController else { return }
-
         stop()
     }
 
