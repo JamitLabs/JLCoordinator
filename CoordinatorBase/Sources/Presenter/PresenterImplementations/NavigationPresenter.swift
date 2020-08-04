@@ -33,6 +33,9 @@ public class NavigationPresenter: NavigablePresenting {
             guard let navigationController = self?.navigationController else { return }
 
             self?.notifyObserverAboutDismiss(of: navigationController)
+            navigationController.viewControllers.forEach {
+                self?.notifyObserverAboutDismiss(of: $0)
+            }
         }
     }
 }
