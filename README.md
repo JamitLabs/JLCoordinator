@@ -118,9 +118,19 @@ If you want to stop a coordinator you just have to call the `stop()` function. I
 The **Coordinator** provides through implementing the `PresenterObserving` protocol several functions to get informed about the dismiss and present completion of `UIViewControllers` or `UINavigationController`. If you want to get informed about the dismissal of a `UIViewController` just override following functions:
 
 ```swift
+// If an UIViewController is dismissed this function is called
 override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
 	// Do some stuff what should happend if the viewController is dismissed
 	// for example: stop()
+}
+
+// If an UINavigationController is dismissed this function is called
+override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
+	// Do some stuff what should happend if the navigationController is dismissed
+	// You could check if this was the NavigationController of a specific UIViewController
+	guard myViewController.navigationController === navigationController else { return }
+	
+	stop()
 }
 ```
 
