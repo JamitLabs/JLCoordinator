@@ -83,12 +83,41 @@ class CoordinatorTests: XCTestCase {
         coordinator.start()
 
         let childCoordinator = MockCoordinator(presenter: InitialPresenter(window: UIWindow()))
+
+        let stopExpectation = expectation(description: "Did stop child")
+        coordinator.didStopAction = { stoppedCoordinator in
+            XCTAssertTrue(stoppedCoordinator === childCoordinator)
+            stopExpectation.fulfill()
+        }
+
         coordinator.add(childCoordinator: childCoordinator)
         childCoordinator.start()
         childCoordinator.stop()
 
         XCTAssertNil(childCoordinator.parentCoordinator)
         XCTAssertNil(coordinator.childCoordinators.first { $0 === childCoordinator })
+        wait(for: [stopExpectation], timeout: 1)
+    }
+
+    func testRemoveFunctionOfChildCoordinator() throws {
+        let coordinator = MockCoordinator(presenter: InitialPresenter(window: UIWindow()))
+        coordinator.start()
+
+        let childCoordinator = MockCoordinator(presenter: InitialPresenter(window: UIWindow()))
+
+        let removedExpectation = expectation(description: "Did remove child")
+        coordinator.didRemoveAction = { removedCoordinator in
+            XCTAssertTrue(removedCoordinator === childCoordinator)
+            removedExpectation.fulfill()
+        }
+
+        coordinator.add(childCoordinator: childCoordinator)
+        childCoordinator.start()
+        childCoordinator.removeFromParentCoordinator()
+
+        XCTAssertNil(childCoordinator.parentCoordinator)
+        XCTAssertNil(coordinator.childCoordinators.first { $0 === childCoordinator })
+        wait(for: [removedExpectation], timeout: 1)
     }
 
     func testReplacingPresenter() throws {

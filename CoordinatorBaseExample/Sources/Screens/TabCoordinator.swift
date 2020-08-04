@@ -13,6 +13,14 @@ final class TabCoordinator: Coordinator, CoordinatorObserving {
         CoordinatorCounter.shared.register(self)
     }
 
+    override func didRemove(child: Coordinator) {
+        super.didRemove(child: child)
+
+        guard !childCoordinators.isEmpty else { return }
+
+        stop()
+    }
+
     override func start() {
         presenter.present(tabBarController, animated: true)
 
