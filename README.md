@@ -1,5 +1,5 @@
 # JLCoordinator Framework
-A basic coordinator pattern implementation with presenter approach. Coordinator are managing the screen flow of your app and coordinating the connection between the UI and your Models.
+A basic coordinator pattern implementation with presenter approach. Coordinators are managing the screen flow of your app and coordinating the connection between the UI and your models.
 
 ## Installation
 The framework is configured to work with `Swift Package Manager`. Just add it to your dependencies.
@@ -10,46 +10,46 @@ The framework is configured to work with `Swift Package Manager`. Just add it to
 The framework is clustered into to main components the **Coordinator** and the **Presenter**. The **Coordinator** is used to handle the screen flow and the event delegation of its corresponding `UIViewController`. For example if a button is tapped on a view controller the coordinator should be informed about this. The coordinator then is able to handle the event and can for example start another screen flow. For more details just take a look into our example project which is included.
 
 ### Presenter Protocol
-The **Presenter** is handling the way how the `UIViewController` of a **Coordinator** is presented. In some cases we need the flexibility to present the ViewController in different ways, for example modally or in a navigation stack. This is now solved through the **Presenter** just start the Coordinator with the presenter implementation of your choice. All coordinators which uses a presenter are getting informed about a dismissal or presentation of an `UINavigationController` through the **predefined functions** in the **Coordinator**.
+The **Presenter** is handling the way how the `UIViewController` of a **Coordinator** is presented. In some cases we need the flexibility to present `UIViewController` in different ways, for example modally or in a navigation stack. This is now solved through the **Presenter** just start the Coordinator with the presenter implementation of your choice. All coordinators which use a presenter are getting informed about a dismissal or presentation of an `UINavigationController` through the **predefined functions** in the **Coordinator**.
 
-Another advantage of the **Presenter** is the handling of common UIKit events such as dismiss through swipe back on an `UINavigationController` or the in iOS 13 introduced adaptive dismiss for modally presented screens. If such an event occurs the coordinators which are using the Presenter are informed about the dismissal of the viewController no matter how it was dismissed. 
+Another advantage of the **Presenter** is the handling of common `UIKit` events such as dismiss through swipe back on an `UINavigationController` or the in iOS 13 introduced adaptive dismiss for modally presented screens. If such an event occurs the coordinators which are using the presenter are informed about the dismissal of the `UIViewController` no matter how it was dismissed. 
 
-Predefined presenter implementations for the most use cases are ready to use implemented (see list below). If you have another use case, for example embedding an `UIViewController`, you can implement the `Presenter` protocol.
+Predefined presenter implementations for the most use cases are ready to use (see list below). If you have another use case, for example embedding an `UIViewController`, you can implement the `Presenter` protocol.
 
 **Predefined implementations**
 
 <details>
-<summary>**InitialPresenter**</summary>
+<summary><b>InitialPresenter</b></summary>
 <br>
 Is used to present in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate`)
 </details>
 
 <details>
-<summary>**ModalPresenter**</summary>
+<summary><b>ModalPresenter</b></summary>
 <br>
 Presents the coordinators `UIViewController` modally on a *PresentingViewController*
 </details>
 
 <details>
-<summary>**ModalNavigationPresenter**</summary>
+<summary><b>ModalNavigationPresenter</b></summary>
 <br>
 Presents a new NavigationController stack modally on a *PresentingViewController*. The first `UIViewController` will be set as `rootViewController` all further `UIViewControllers` will be pushed onto the stack. 
 </details>
 
 <details>
-<summary>**NavigationPresenter**</summary>
+<summary><b>NavigationPresenter</b></summary>
 <br>
 Is initialized with an `UINavigationController` the first presented `UIViewController` is set as `rootViewController` the following are pushed onto the stack.
 </details>
 
 <details>
-<summary>**TabPresenter**</summary>
+<summary><b>TabPresenter</b></summary>
 <br>
 Is used for presenting `UIViewController` embedded in a `UITabBarController` which has to be passed to the `TabPresenter`.
 </details>
 
 <details>
-<summary>**TabNavigationPresenter**</summary>
+<summary><b>TabNavigationPresenter</b></summary>
 <br>
 Is used for presenting `UINavigationController` embedded in a `UITabBarController` which has to be passed to the `TabNavigationPresenter `. The first `UIViewController` is set as `rootViewController` all further will be pushed onto the stack.
 </details>
@@ -74,7 +74,7 @@ final class MyCoordinator: Coordinator {
 }
 ```
 
-After that go to your `AppDelegate`/`SceneDelegate` and initialize your your coordinator with the given `InitialPresenter`.
+After that go to your `AppDelegate`/`SceneDelegate` and initialize your coordinator with the given `InitialPresenter`.
 
 ```swift
 import CoordinatorBase
@@ -111,11 +111,11 @@ func startNextCoordinator() {
 
 ### Stopping a coordinator
 
-If you want to stop a coordinator you just have to call the `stop()` function. If you call `stop()` not only the one coordinator is stopped but it will stop all children and afterwards it informs the parent coordinator that it has removed (`didRemove(child:)`) and stopped (`didStop(child:)`).
+If you want to stop a coordinator you just have to call the `stop()` function. If you call `stop()` not only the one coordinator is stopped but it will stop all children and afterwards it informs the parent coordinator that it has been removed (`didRemove(child:)`) and stopped (`didStop(child:)`).
 
 ### Getting informed about completed dismissals and presententations
 
-The **Coordinator** provides through implementing the `PresenterObserving` protocol several functions to getting informed about the dismiss and present completion of `UIViewControllers` or `UINavigationController`. If you want to get informed about the dismiss of a view controller just override following function:
+The **Coordinator** provides through implementing the `PresenterObserving` protocol several functions to get informed about the dismiss and present completion of `UIViewControllers` or `UINavigationController`. If you want to get informed about the dismissal of a `UIViewController` just override following functions:
 
 ```swift
 override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
@@ -135,7 +135,7 @@ override func presenter(_ presenter: Presenter, didPresent viewController: UIVie
 For further examples please take a look into the included example project.
 
 ## Development
-These tools are required for developing the project. Please make sure to have installed the correct versions or install them for example via Homebrew 🍻
+These tools are required for development of the project. Please make sure to have installed the correct versions or install them for example via Homebrew 🍻
 
 | Tool                          | Version        |
 | ------------------------------|:-------------: |
@@ -153,6 +153,10 @@ SwiftLint is used to enforce our code styles and conventions. The configuration 
 - [General information](https://www.notion.so/jamitlabs/Apple-Devs-23e4ee8c9a984c84a187e1d3bdfdedbb)
 
 ## Notes 
+<<<<<<< HEAD
 ⚠️ If a certificate requires revocation please contact some of the CI maintainers
 
 ⚠️ SwiftGen is only able to generate colors from asset catalogs since iOS 11 the project 
+=======
+⚠️ If a certificate requires revokation please contact some of the CI maintainers
+>>>>>>> a7f26d3... Adjust readme according to review
