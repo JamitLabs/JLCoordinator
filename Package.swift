@@ -3,17 +3,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "CoordinatorBase",
+    name: "JLCoordinator",
     platforms: [.iOS(.v9)],
     products: [
-        .library(name: "CoordinatorBase", targets: ["CoordinatorBase"])
+        .library(name: "JLCoordinator", targets: ["JLCoordinator"])
     ],
     dependencies: [],
     targets: [
         .target(
-            name: "CoordinatorBase",
+            name: "JLCoordinator",
             dependencies: [],
-            path: "CoordinatorBase/Sources"
+            path: "JLCoordinator/Sources"
         )
     ]
 )
