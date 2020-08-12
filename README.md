@@ -163,10 +163,7 @@ SwiftLint is used to enforce our code styles and conventions. The configuration 
 - [General information](https://www.notion.so/jamitlabs/Apple-Devs-23e4ee8c9a984c84a187e1d3bdfdedbb)
 
 ## Notes 
-<<<<<<< HEAD
+
 ⚠️ If a certificate requires revocation please contact some of the CI maintainers
 
 ⚠️ SwiftGen is only able to generate colors from asset catalogs since iOS 11 the project 
-=======
-⚠️ If a certificate requires revokation please contact some of the CI maintainers
->>>>>>> a7f26d3... Adjust readme according to review
