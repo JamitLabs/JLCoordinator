@@ -67,10 +67,10 @@ disabled_rules:
 - type_name
 
 included:
-- CoordinatorBase/Sources
-- CoordinatorBaseTests/Sources
-- CoordinatorBaseExample/Sources
-- CoordinatorBaseExampleTests/Sources
+- JLCoordinator/Sources
+- JLCoordinatorTests/Sources
+- JLCoordinatorExample/Sources
+- JLCoordinatorExampleTests/Sources
 
 # Rule Configurations
 conditional_returns_on_newline:

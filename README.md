@@ -1,4 +1,4 @@
-# CoordinatorBase Framework
+# JLCoordinator Framework
 A basic coordinator pattern implementation with presenter approach
 
 ## Project Tooling and Requirements
@@ -35,6 +35,6 @@ If changes of the configuration are necessary please create a project branch in 
 - [General information](https://www.notion.so/jamitlabs/Apple-Devs-23e4ee8c9a984c84a187e1d3bdfdedbb)
 
 ## Notes 
-⚠️ If a certificate requires revokation please contact some of the CI maintainers
+⚠️ If a certificate requires revocation please contact some of the CI maintainers
 
 ⚠️ SwiftGen is only able to generate colors from asset catalogs since iOS 11 the project 
