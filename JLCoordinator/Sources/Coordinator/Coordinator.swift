@@ -9,7 +9,7 @@ open class Coordinator: PresenterObserving {
     /// All added children coordinators
     public var childCoordinators: [Coordinator] = []
     /// The parentCoordinator of this Coordinator
-    public weak var parentCoordinator: Coordinator?
+    public private(set) weak var parentCoordinator: Coordinator?
 
     /// The presenter of this Coordinator it is notifing this Coordinator about dismissal and presentation of
     /// `UIViewController` and its subclasses.
@@ -61,6 +61,12 @@ open class Coordinator: PresenterObserving {
     ///   - child: The coordinator which is added as child. After adding the childs parentCoordinator property is set
     ///   to this coordinator
     open func add(childCoordinator child: Coordinator) {
+        guard child.parentCoordinator == nil else {
+            return NSLog(
+                "⚠️ Coordinator \(String(describing: self)) - \(#function): Coordinator is already child of another parent"
+            )
+        }
+
         guard !childCoordinators.contains(where: { $0 === child }) else {
             return NSLog(
                 "⚠️ Coordinator \(String(describing: self)) - \(#function): Coordinator is already added as child"
