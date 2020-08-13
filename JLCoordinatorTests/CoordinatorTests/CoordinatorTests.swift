@@ -196,4 +196,32 @@ class CoordinatorTests: XCTestCase {
         initialPresenter.notifyObserverAboutDismissOfAllViewControllers(but: rootViewControllerToPresent, of: navigationControllerToPresent)
         wait(for: [waitExpectation], timeout: 1)
     }
+
+    func testAddCoordinatorAsChildWhichAlreadyHasParent() throws {
+        let firstParentCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+        let secondParentCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+        let childCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+
+        firstParentCoordinator.add(childCoordinator: childCoordinator);
+        secondParentCoordinator.add(childCoordinator: childCoordinator);
+        XCTAssertTrue(firstParentCoordinator === childCoordinator.parentCoordinator)
+        XCTAssertFalse(secondParentCoordinator.childCoordinators.contains(where: { $0 === childCoordinator }))
+        XCTAssertTrue(firstParentCoordinator.childCoordinators.contains(where: { $0 === childCoordinator }))
+    }
+
+    func testChangeParentCoordinator() throws {
+        let firstParentCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+        let secondParentCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+        let childCoordinator: MockCoordinator = .init(presenter: InitialPresenter(window: .init()))
+
+        firstParentCoordinator.add(childCoordinator: childCoordinator);
+        XCTAssertTrue(firstParentCoordinator === childCoordinator.parentCoordinator)
+        childCoordinator.removeFromParentCoordinator()
+        XCTAssertNil(childCoordinator.parentCoordinator)
+
+        secondParentCoordinator.add(childCoordinator: childCoordinator);
+        XCTAssertTrue(secondParentCoordinator === childCoordinator.parentCoordinator)
+        XCTAssertFalse(firstParentCoordinator.childCoordinators.contains(where: { $0 === childCoordinator }))
+        XCTAssertTrue(secondParentCoordinator.childCoordinators.contains(where: { $0 === childCoordinator }))
+    }
 }
