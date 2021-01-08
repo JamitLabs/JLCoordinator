@@ -155,15 +155,3 @@ These tools are required for development of the project. Please make sure to hav
 
 ## SwiftLint
 SwiftLint is used to enforce our code styles and conventions. The configuration file is placed in the root folder of the project.
-
-## Contribution Guidelines
-- [How to work in an iOS project at JamitLabs](https://www.notion.so/jamitlabs/WIP-Einstieg-in-die-iOS-Entwicklung-80f531c2a4ef4525bda873958e6c1849)
-- [How to do Merge Requests](https://www.notion.so/jamitlabs/How-To-Manage-Merge-Request-FAQ-167bc39b324a4c829281426f8d935dcc)
-- [Follow our best practices and conventions](https://www.notion.so/jamitlabs/Best-Practices-Know-How-c8f0ab2969ff40e6b6a97833466493a6)
-- [General information](https://www.notion.so/jamitlabs/Apple-Devs-23e4ee8c9a984c84a187e1d3bdfdedbb)
-
-## Notes 
-
-⚠️ If a certificate requires revocation please contact some of the CI maintainers
-
-⚠️ SwiftGen is only able to generate colors from asset catalogs since iOS 11 the project 
