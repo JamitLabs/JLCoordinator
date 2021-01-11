@@ -60,7 +60,7 @@ Is used for presenting `UINavigationController` embedded in a `UITabBarControlle
 To start implementing an app using the coordinator framework you should start by subclassing `Coordinator` and overriding its `start()` function. In most cases you have to present the rootViewController of the Coordinator in this function.
 
 ```swift
-import CoordinatorBase
+import JLCoordinator
 import UIKit
 
 final class MyCoordinator: Coordinator {
@@ -77,7 +77,7 @@ final class MyCoordinator: Coordinator {
 After that go to your `AppDelegate`/`SceneDelegate` and initialize your coordinator with the given `InitialPresenter`.
 
 ```swift
-import CoordinatorBase
+import JLCoordinator
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
