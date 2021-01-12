@@ -111,7 +111,7 @@ Starting a child coordinator is really easy, just instantiate your child with a 
 func startNextCoordinator() {
     let child: MyChildCoordinator = .init(presenter: ModalPresenter(presentingViewController: viewController))
     add(childCoordinator: child)
-    viewCoordinator.start()
+    child.start()
 }
 ```
 
@@ -126,17 +126,17 @@ The **Coordinator** provides through implementing the `PresenterObserving` proto
 ```swift
 // If an UIViewController is dismissed this function is called
 override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
-	// Do some stuff what should happend if the viewController is dismissed
-	// for example: stop()
+    // Do some stuff what should happend if the viewController is dismissed
+    // for example: stop()
 }
 
 // If an UINavigationController is dismissed this function is called
 override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
-	// Do some stuff what should happend if the navigationController is dismissed
-	// You could check if this was the NavigationController of a specific UIViewController
-	guard myViewController.navigationController === navigationController else { return }
-	
-	stop()
+    // Do some stuff what should happend if the navigationController is dismissed
+    // You could check if this was the NavigationController of a specific UIViewController
+    guard myViewController.navigationController === navigationController else { return }
+
+    stop()
 }
 ```
 
