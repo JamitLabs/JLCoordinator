@@ -19,6 +19,12 @@ Predefined presenter implementations for the most use cases are ready to use (se
 **Predefined implementations**
 
 <details>
+<summary><b>InitialNavigationPresenter</b></summary>
+<br>
+Is used to present a NavigationController stack in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate`).  The first `UIViewController` will be set as `rootViewController` all further `UIViewControllers` will be pushed onto the stack.
+</details>
+
+<details>
 <summary><b>InitialPresenter</b></summary>
 <br>
 Is used to present in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate`)
