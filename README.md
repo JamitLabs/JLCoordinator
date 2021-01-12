@@ -19,6 +19,12 @@ Predefined presenter implementations for the most use cases are ready to use (se
 **Predefined implementations**
 
 <details>
+<summary><b>InitialNavigationPresenter</b></summary>
+<br>
+Is used to present a NavigationController stack in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate`).  The first `UIViewController` will be set as `rootViewController` all further `UIViewControllers` will be pushed onto the stack.
+</details>
+
+<details>
 <summary><b>InitialPresenter</b></summary>
 <br>
 Is used to present in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate`)
@@ -105,7 +111,7 @@ Starting a child coordinator is really easy, just instantiate your child with a 
 func startNextCoordinator() {
     let child: MyChildCoordinator = .init(presenter: ModalPresenter(presentingViewController: viewController))
     add(childCoordinator: child)
-    viewCoordinator.start()
+    child.start()
 }
 ```
 
@@ -120,17 +126,17 @@ The **Coordinator** provides through implementing the `PresenterObserving` proto
 ```swift
 // If an UIViewController is dismissed this function is called
 override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
-	// Do some stuff what should happend if the viewController is dismissed
-	// for example: stop()
+    // Do some stuff what should happend if the viewController is dismissed
+    // for example: stop()
 }
 
 // If an UINavigationController is dismissed this function is called
 override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
-	// Do some stuff what should happend if the navigationController is dismissed
-	// You could check if this was the NavigationController of a specific UIViewController
-	guard myViewController.navigationController === navigationController else { return }
-	
-	stop()
+    // Do some stuff what should happend if the navigationController is dismissed
+    // You could check if this was the NavigationController of a specific UIViewController
+    guard myViewController.navigationController === navigationController else { return }
+
+    stop()
 }
 ```
 
