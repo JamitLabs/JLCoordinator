@@ -363,12 +363,12 @@
 		B4961D892493983D00D19CEB /* PresenterImplementations */ = {
 			isa = PBXGroup;
 			children = (
-				B4961D8A2493983D00D19CEB /* TabPresenter */,
 				EB798D6B25ADB15100B3A4E6 /* InitialNavigationPresenter.swift */,
+				B4961D902493983D00D19CEB /* InitialPresenter.swift */,
 				B4961D8E2493983D00D19CEB /* ModalNavigationPresenter.swift */,
 				B4961D8F2493983D00D19CEB /* ModalPresenter.swift */,
-				B4961D902493983D00D19CEB /* InitialPresenter.swift */,
 				B4961D912493983D00D19CEB /* NavigationPresenter.swift */,
+				B4961D8A2493983D00D19CEB /* TabPresenter */,
 			);
 			path = PresenterImplementations;
 			sourceTree = "<group>";
@@ -421,12 +421,12 @@
 		B4961DB0249776AE00D19CEB /* PresenterTests */ = {
 			isa = PBXGroup;
 			children = (
-				B448E797249C947F002053C2 /* Helper */,
 				EB798D7025ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift */,
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
+				B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */,
 				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
 				B448E798249C994A002053C2 /* NavigationPresenterTests.swift */,
-				B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */,
+				B448E797249C947F002053C2 /* Helper */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
