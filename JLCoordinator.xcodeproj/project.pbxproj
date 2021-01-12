@@ -52,6 +52,8 @@
 		C9AE850924AC7D2F003C29B9 /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */; };
 		C9AE850B24AC8843003C29B9 /* ViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */; };
 		C9AE9DB524B32C4A00FA9601 /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */; };
+		EB798D6C25ADB15100B3A4E6 /* InitialNavigationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB798D6B25ADB15100B3A4E6 /* InitialNavigationPresenter.swift */; };
+		EB798D7125ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB798D7025ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +152,8 @@
 		C9AE850824AC7D2F003C29B9 /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		C9AE850A24AC8843003C29B9 /* ViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoordinator.swift; sourceTree = "<group>"; };
 		C9AE9DB424B32C4A00FA9601 /* ViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewController.storyboard; sourceTree = "<group>"; };
+		EB798D6B25ADB15100B3A4E6 /* InitialNavigationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationPresenter.swift; sourceTree = "<group>"; };
+		EB798D7025ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialNavigationPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -360,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				B4961D8A2493983D00D19CEB /* TabPresenter */,
+				EB798D6B25ADB15100B3A4E6 /* InitialNavigationPresenter.swift */,
 				B4961D8E2493983D00D19CEB /* ModalNavigationPresenter.swift */,
 				B4961D8F2493983D00D19CEB /* ModalPresenter.swift */,
 				B4961D902493983D00D19CEB /* InitialPresenter.swift */,
@@ -417,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				B448E797249C947F002053C2 /* Helper */,
+				EB798D7025ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift */,
 				B4961DB1249776CE00D19CEB /* InitialPresenterTests.swift */,
 				B4D1DC43249A1253008E291E /* ModalPresenterTests.swift */,
 				B448E798249C994A002053C2 /* NavigationPresenterTests.swift */,
@@ -650,6 +656,7 @@
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
 				C947052724BC7A9100479ABB /* ModalPresenting.swift in Sources */,
 				C947052924BC81DD00479ABB /* InitialPresenting.swift in Sources */,
+				EB798D6C25ADB15100B3A4E6 /* InitialNavigationPresenter.swift in Sources */,
 				B4961D9F2493984500D19CEB /* Coordinator.swift in Sources */,
 				B4961D932493983D00D19CEB /* Presenter.swift in Sources */,
 				B4961D9C2493983D00D19CEB /* NavigationPresenter.swift in Sources */,
@@ -668,6 +675,7 @@
 				B448E799249C994A002053C2 /* NavigationPresenterTests.swift in Sources */,
 				B448E796249C93DF002053C2 /* MockPresenterObserving.swift in Sources */,
 				B4961DA92497530200D19CEB /* CoordinatorTests.swift in Sources */,
+				EB798D7125ADB18400B3A4E6 /* InitialNavigationPresenterTests.swift in Sources */,
 				B4961DA42493A02600D19CEB /* WeakCacheTests.swift in Sources */,
 				B4961DA72493A0B700D19CEB /* CacheableElement.swift in Sources */,
 				B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */,
