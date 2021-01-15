@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 import UIKit
 
 /// `PresenterObserving` defines functions which are necessary for an observer to subscribe on a Presenter

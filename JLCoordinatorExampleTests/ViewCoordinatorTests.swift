@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 import XCTest
 import JLCoordinator
 @testable import JLCoordinatorExample

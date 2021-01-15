@@ -1,5 +1,3 @@
-// Copyright © 2021 Jamit Labs GmbH. All rights reserved.
-
 import UIKit
 
 public class InitialNavigationPresenter: NavigationPresenter, InitialPresenting {

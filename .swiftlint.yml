@@ -14,7 +14,6 @@ opt_in_rules:
 - explicit_type_interface
 - fallthrough
 - fatal_error_message
-- file_header
 - file_name
 - file_types_order
 - first_where
@@ -65,6 +64,7 @@ disabled_rules:
 - force_cast
 - todo
 - type_name
+- file_header
 
 included:
 - JLCoordinator/Sources
@@ -80,9 +80,6 @@ explicit_type_interface:
   allow_redundancy: true
   excluded:
     - local
-
-file_header:
-  required_pattern: \/\/ Copyright © \d{4} Jamit Labs GmbH\. All rights reserved\.
 
 file_name:
   nested_type_separator: ""

@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 import UIKit
 
 /// The base class of all `Coordinators`. `Coordinator` handles the screen flows and navigation. Additionally it

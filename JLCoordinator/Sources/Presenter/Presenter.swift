@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 import UIKit
 
 /// This protocol defines all functions and constraints which are necessary for a `Presenter` implementation.
