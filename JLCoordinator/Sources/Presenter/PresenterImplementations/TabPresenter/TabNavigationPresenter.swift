@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 import UIKit
 
 public final class TabNavigationPresenter: NavigationPresenter, TabPresenting {

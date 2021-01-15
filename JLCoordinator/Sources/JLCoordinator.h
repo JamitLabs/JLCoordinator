@@ -1,5 +1,3 @@
-// Copyright © 2020 Jamit Labs GmbH. All rights reserved.
-
 #import <Foundation/Foundation.h>
 
 //! Project version number for JLCoordinator.
