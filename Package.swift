@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "JLCoordinator",
-    platforms: [.iOS(.v9)],
+    platforms: [.iOS(.v12)],
     products: [
         .library(name: "JLCoordinator", targets: ["JLCoordinator"])
     ],
