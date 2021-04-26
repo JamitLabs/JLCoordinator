@@ -9,7 +9,7 @@ open class ModalPresenter: ModalPresenting {
 
     public init(
         presentingViewController: UIViewController,
-        modalPresentationConfiguration: ModalPresentationConfiguration = .default
+        configuration: ModalPresentationConfiguration = .default
     ) {
         assert(
             presentingViewController.presentedViewController == nil,
@@ -17,7 +17,7 @@ open class ModalPresenter: ModalPresenting {
         )
 
         self.presentingViewController = presentingViewController
-        self.modalPresentationConfiguration = modalPresentationConfiguration
+        self.modalPresentationConfiguration = configuration
         adaptivePresentationDelegateWrapper.delegate = self
     }
 

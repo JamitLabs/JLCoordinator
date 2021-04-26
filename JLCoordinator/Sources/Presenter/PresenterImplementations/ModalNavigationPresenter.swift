@@ -11,10 +11,10 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
 
     public init(
         presentingViewController: UIViewController,
-        modalPresentationConfiguration: ModalPresentationConfiguration = .default
+        configuration: ModalPresentationConfiguration = .default
     ) {
         self.presentingViewController = presentingViewController
-        self.modalPresentationConfiguration = modalPresentationConfiguration
+        self.modalPresentationConfiguration = configuration
         adaptivePresentationDelegateWrapper.delegate = self
         delegateWrapper.delegate = self
     }
@@ -30,7 +30,6 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         navigationController.delegate = delegateWrapper
         navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
         navigationController.modalTransitionStyle = modalPresentationConfiguration.transitionStyle
-        navigationController.modalPresentationStyle = modalPresentationConfiguration.presentationStyle
         presentModally(navigationController, animated: true) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
         }
