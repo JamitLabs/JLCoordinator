@@ -2,7 +2,9 @@ import UIKit
 
 protocol ViewControllerDelegate: AnyObject {
     func didTriggerModalViewController(in viewController: ViewController)
+    func didTriggerFullscreenModalViewController(in viewController: ViewController)
     func didTriggerModalNavigationController(in viewController: ViewController)
+    func didTriggerFullscreenModalNavigationViewController(in viewController: ViewController)
     func didTriggerPushViewController(in viewController: ViewController)
     func didTriggerModalTabController(in viewController: ViewController)
     func didTriggerCloseButton(in viewController: ViewController)
@@ -45,8 +47,16 @@ final class ViewController: UIViewController {
         delegate?.didTriggerModalViewController(in: self)
     }
 
+    @IBAction private func didTriggerFullscreenModalViewControllerButton(_ sender: Any) {
+        delegate?.didTriggerFullscreenModalViewController(in: self)
+    }
+
     @IBAction private func didTriggerModalNavigationControllerButton(_ sender: UIButton) {
         delegate?.didTriggerModalNavigationController(in: self)
+    }
+
+    @IBAction private func didTriggerFullscreenModalNavigationControllerButton(_ sender: Any) {
+        delegate?.didTriggerFullscreenModalNavigationViewController(in: self)
     }
 
     @IBAction private func didTriggerPushViewControllerButton(_ sender: UIButton) {
