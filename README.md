@@ -33,13 +33,13 @@ Is used to present in a `UIWindow` (e.g. used in `AppDelegate` or `SceneDelegate
 <details>
 <summary><b>ModalPresenter</b></summary>
 <br>
-Presents the coordinators `UIViewController` modally on a *PresentingViewController*
+Presents the coordinators `UIViewController` modally on a *PresentingViewController*. There is a `ModalPresentationConfiguration` where you can set the `modalTransitionStyle` as well as the `modalPresentationStyle`.
 </details>
 
 <details>
 <summary><b>ModalNavigationPresenter</b></summary>
 <br>
-Presents a new NavigationController stack modally on a *PresentingViewController*. The first `UIViewController` will be set as `rootViewController` all further `UIViewControllers` will be pushed onto the stack. 
+Presents a new NavigationController stack modally on a *PresentingViewController*. The first `UIViewController` will be set as `rootViewController` all further `UIViewControllers` will be pushed onto the stack. There is a `ModalPresentationConfiguration` where you can set the `modalTransitionStyle` as well as the `modalPresentationStyle`. 
 </details>
 
 <details>

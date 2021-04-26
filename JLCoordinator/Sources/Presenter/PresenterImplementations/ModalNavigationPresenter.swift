@@ -1,15 +1,20 @@
 import UIKit
 
 public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
+    public let observers: WeakCache<PresenterObserving> = .init()
     public let presentingViewController: UIViewController
     public var navigationController: UINavigationController?
+
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
-    let delegateWrapper: NavigationControllerDelegateWrapper = .init()
+    private let delegateWrapper: NavigationControllerDelegateWrapper = .init()
+    private let modalPresentationConfiguration: ModalPresentationConfiguration
 
-    public let observers: WeakCache<PresenterObserving> = .init()
-
-    public init(presentingViewController: UIViewController) {
+    public init(
+        presentingViewController: UIViewController,
+        configuration: ModalPresentationConfiguration = .default
+    ) {
         self.presentingViewController = presentingViewController
+        self.modalPresentationConfiguration = configuration
         adaptivePresentationDelegateWrapper.delegate = self
         delegateWrapper.delegate = self
     }
@@ -19,9 +24,13 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         animated: Bool
     ) {
         navigationController = .init(rootViewController: viewController)
-        navigationController?.delegate = delegateWrapper
-        navigationController?.presentationController?.delegate = adaptivePresentationDelegateWrapper
-        presentModally(navigationController!, animated: true) { [weak self] in
+
+        guard let navigationController = navigationController else { return }
+
+        navigationController.delegate = delegateWrapper
+        navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
+        navigationController.modalTransitionStyle = modalPresentationConfiguration.transitionStyle
+        presentModally(navigationController, animated: true) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
         }
     }
@@ -69,6 +78,10 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
 }
 
 extension ModalNavigationPresenter: AdaptivePresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return modalPresentationConfiguration.presentationStyle
+    }
+
     func adaptiveDidDismiss(_ viewController: UIViewController) {
         notifyObserverAboutDismiss(of: viewController)
     }
