@@ -5,18 +5,25 @@ open class ModalPresenter: ModalPresenting {
 
     public let presentingViewController: UIViewController
     private let adaptivePresentationDelegateWrapper: AdaptivePresentationControllerDelegateWrapper = .init()
+    private let modalPresentationConfiguration: ModalPresentationConfiguration
 
-    public init(presentingViewController: UIViewController) {
+    public init(
+        presentingViewController: UIViewController,
+        configuration: ModalPresentationConfiguration = .default
+    ) {
         assert(
             presentingViewController.presentedViewController == nil,
             "Trying to initialise ModalPresenter with a `UIViewController` which already is presenting another `UIViewController`. This is not allowed!"
         )
 
         self.presentingViewController = presentingViewController
+        self.modalPresentationConfiguration = configuration
         adaptivePresentationDelegateWrapper.delegate = self
     }
 
     public func present(_ viewController: UIViewController, animated: Bool = true) {
+        viewController.modalTransitionStyle = modalPresentationConfiguration.transitionStyle
+        viewController.modalPresentationStyle = modalPresentationConfiguration.presentationStyle
         viewController.presentationController?.delegate = adaptivePresentationDelegateWrapper
         presentModally(viewController, animated: true)
     }
@@ -40,6 +47,10 @@ open class ModalPresenter: ModalPresenting {
 }
 
 extension ModalPresenter: AdaptivePresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        modalPresentationConfiguration.presentationStyle
+    }
+
     func adaptiveDidDismiss(_ viewController: UIViewController) {
         notifyObserverAboutDismiss(of: viewController)
     }

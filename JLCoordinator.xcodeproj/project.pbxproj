@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1ED845152632CB1D00AE02B8 /* ModalPresentationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED845142632CB1D00AE02B8 /* ModalPresentationConfiguration.swift */; };
 		B4489D2E24BE047200EF394F /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4489D2D24BE047200EF394F /* MockNavigationController.swift */; };
 		B4489D3024BE079100EF394F /* ModalNavigationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */; };
 		B448E794249C911A002053C2 /* MockPresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B448E793249C911A002053C2 /* MockPresentingViewController.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1ED845142632CB1D00AE02B8 /* ModalPresentationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationConfiguration.swift; sourceTree = "<group>"; };
 		B4489D2D24BE047200EF394F /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		B4489D2F24BE079100EF394F /* ModalNavigationPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigationPresenterTests.swift; sourceTree = "<group>"; };
 		B448E793249C911A002053C2 /* MockPresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPresentingViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +192,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1ED845132632CB0100AE02B8 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				1ED845142632CB1D00AE02B8 /* ModalPresentationConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		B448E797249C947F002053C2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -294,11 +304,12 @@
 		B4961D782493955B00D19CEB /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				B4961D852493983D00D19CEB /* Presenter.swift */,
 				C947052824BC81DD00479ABB /* InitialPresenting.swift */,
 				C947052624BC7A9100479ABB /* ModalPresenting.swift */,
 				C947052424BC7A0300479ABB /* NavigablePresenting.swift */,
+				B4961D852493983D00D19CEB /* Presenter.swift */,
 				B4961D922493983D00D19CEB /* PresenterObserving.swift */,
+				1ED845132632CB0100AE02B8 /* Configuration */,
 				B4961D862493983D00D19CEB /* DelegateWrapper */,
 				B4961D892493983D00D19CEB /* PresenterImplementations */,
 			);
@@ -386,7 +397,6 @@
 		B4961DA02493984F00D19CEB /* Basic */ = {
 			isa = PBXGroup;
 			children = (
-				C9AE851524ACB53D003C29B9 /* Extensions */,
 				B4961DA12493984F00D19CEB /* WeakCache.swift */,
 			);
 			path = Basic;
@@ -439,13 +449,6 @@
 				B4FDA8B124CAD3360055386E /* CoordinatorObserving.swift */,
 			);
 			path = Basic;
-			sourceTree = "<group>";
-		};
-		C9AE851524ACB53D003C29B9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +655,7 @@
 				B4961D952493983D00D19CEB /* NavigationControllerDelegateWrapper.swift in Sources */,
 				B4961DA22493984F00D19CEB /* WeakCache.swift in Sources */,
 				B4961D9A2493983D00D19CEB /* ModalPresenter.swift in Sources */,
+				1ED845152632CB1D00AE02B8 /* ModalPresentationConfiguration.swift in Sources */,
 				B4961D9B2493983D00D19CEB /* InitialPresenter.swift in Sources */,
 				B4961D942493983D00D19CEB /* AdaptivePresentationControllerDelegateWrapper.swift in Sources */,
 				C947052724BC7A9100479ABB /* ModalPresenting.swift in Sources */,
@@ -796,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -854,7 +858,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -879,12 +883,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JLCoordinator/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamitlabs.JLCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -906,12 +911,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = JLCoordinator/SupportingFiles/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamitlabs.JLCoordinator;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -966,10 +972,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = JLCoordinatorExample/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamitlabs.JLCoordinatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -985,10 +993,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = JLCoordinatorExample/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jamitlabs.JLCoordinatorExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1004,7 +1014,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = JLCoordinatorExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1026,7 +1036,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DB7EUU9D79;
 				INFOPLIST_FILE = JLCoordinatorExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

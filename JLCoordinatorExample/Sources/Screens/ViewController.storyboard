@@ -1,65 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJT-t8-AhY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJT-t8-AhY">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="fQa-Sm-3XM">
             <objects>
-                <viewController storyboardIdentifier="ViewController" id="aJT-t8-AhY" customClass="ViewController" customModule="CoordinatorBaseExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="aJT-t8-AhY" customClass="ViewController" customModule="JLCoordinatorExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8dr-JW-XCg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bus-lr-52J">
-                                <rect key="frame" x="113.5" y="358" width="187" height="180"/>
+                                <rect key="frame" x="76.5" y="328" width="261" height="240"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrq-PV-dch">
-                                        <rect key="frame" x="0.0" y="0.0" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrq-PV-dch">
+                                        <rect key="frame" x="0.0" y="0.0" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal ViewController"/>
                                         <connections>
                                             <action selector="didTriggerModalViewControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="5EA-hH-Zyx"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="345-1A-vYV">
-                                        <rect key="frame" x="0.0" y="30" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4F-ZR-uQa">
+                                        <rect key="frame" x="0.0" y="30" width="261" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Fullscreen Modal ViewController"/>
+                                        <connections>
+                                            <action selector="didTriggerFullscreenModalViewControllerButton:" destination="aJT-t8-AhY" eventType="primaryActionTriggered" id="333-Am-Jc4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="345-1A-vYV">
+                                        <rect key="frame" x="0.0" y="60" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal NavigationController"/>
                                         <connections>
                                             <action selector="didTriggerModalNavigationControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="x9i-4P-Quo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-5q-ukH">
-                                        <rect key="frame" x="0.0" y="60" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Gu-FzU">
+                                        <rect key="frame" x="0.0" y="90" width="261" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Fullscreen Modal NavigationController"/>
+                                        <connections>
+                                            <action selector="didTriggerFullscreenModalNavigationControllerButton:" destination="aJT-t8-AhY" eventType="primaryActionTriggered" id="4gW-o7-hvw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vh9-5q-ukH">
+                                        <rect key="frame" x="0.0" y="120" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Push ViewController"/>
                                         <connections>
                                             <action selector="didTriggerPushViewControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="BFP-Lt-SPS"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks7-cW-SdI">
-                                        <rect key="frame" x="0.0" y="90" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ks7-cW-SdI">
+                                        <rect key="frame" x="0.0" y="150" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Modal TabController"/>
                                         <connections>
                                             <action selector="didTriggerModalTabControllerButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="Utw-KW-DVW"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4N-j1-OH7">
-                                        <rect key="frame" x="0.0" y="120" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4N-j1-OH7">
+                                        <rect key="frame" x="0.0" y="180" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Close View"/>
                                         <connections>
                                             <action selector="didTriggerCloseButton:" destination="aJT-t8-AhY" eventType="touchUpInside" id="Vsl-um-6ce"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-af-Fg5">
-                                        <rect key="frame" x="0.0" y="150" width="187" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dn1-af-Fg5">
+                                        <rect key="frame" x="0.0" y="210" width="261" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Close Root View"/>
                                         <connections>
@@ -69,16 +87,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RAl-US-Hoj">
-                                <rect key="frame" x="124.5" y="825.5" width="165" height="20.5"/>
+                                <rect key="frame" x="125" y="825.5" width="164" height="20.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinator Count:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7R-Jc-UbI">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="145.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SL-yI-FSB">
-                                        <rect key="frame" x="154.5" y="0.0" width="10.5" height="20.5"/>
+                                        <rect key="frame" x="153.5" y="0.0" width="10.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -86,7 +104,8 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="EVa-1p-vdI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bus-lr-52J" firstAttribute="centerY" secondItem="8dr-JW-XCg" secondAttribute="centerY" id="1RO-J5-WWf"/>
                             <constraint firstItem="bus-lr-52J" firstAttribute="centerX" secondItem="8dr-JW-XCg" secondAttribute="centerX" id="5Zb-Bl-4Jx"/>
@@ -94,7 +113,6 @@
                             <constraint firstItem="EVa-1p-vdI" firstAttribute="bottom" secondItem="RAl-US-Hoj" secondAttribute="bottom" constant="16" id="YRD-Yp-JbI"/>
                             <constraint firstItem="RAl-US-Hoj" firstAttribute="centerX" secondItem="EVa-1p-vdI" secondAttribute="centerX" id="ggf-pI-oPQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="EVa-1p-vdI"/>
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="a4N-j1-OH7" id="mbH-cr-Vyq"/>
@@ -111,4 +129,9 @@
             <point key="canvasLocation" x="28" y="135"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -58,9 +58,37 @@ extension ViewCoordinator: ViewControllerDelegate {
         viewCoordinator.start()
     }
 
+    func didTriggerFullscreenModalViewController(in viewController: ViewController) {
+        let viewCoordinator = ViewCoordinator(
+            presenter: ModalPresenter(
+                presentingViewController: viewController,
+                configuration: .init(
+                    transitionStyle: .coverVertical,
+                    presentationStyle: .fullScreen
+                )
+            )
+        )
+        add(childCoordinator: viewCoordinator)
+        viewCoordinator.start()
+    }
+
     func didTriggerModalNavigationController(in viewController: ViewController) {
         let viewCoordinator: ViewCoordinator = .init(
             presenter: ModalNavigationPresenter(presentingViewController: viewController)
+        )
+        add(childCoordinator: viewCoordinator)
+        viewCoordinator.start()
+    }
+
+    func didTriggerFullscreenModalNavigationViewController(in viewController: ViewController) {
+        let viewCoordinator: ViewCoordinator = .init(
+            presenter: ModalNavigationPresenter(
+                presentingViewController: viewController,
+                configuration: .init(
+                    transitionStyle: .coverVertical,
+                    presentationStyle: .fullScreen
+                )
+            )
         )
         add(childCoordinator: viewCoordinator)
         viewCoordinator.start()
