@@ -24,5 +24,15 @@ public class InitialPresenter: InitialPresenting {
         window.rootViewController = viewController
         window.makeKeyAndVisible()
         notifyObserverAboutPresentation(of: viewController)
+
+        if animated {
+            UIView.transition(
+                with: window,
+                duration: 0.3,
+                options: .transitionCrossDissolve,
+                animations: { },
+                completion: { _ in }
+            )
+        }
     }
 }
