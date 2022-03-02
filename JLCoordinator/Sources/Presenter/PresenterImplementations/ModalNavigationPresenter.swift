@@ -51,7 +51,7 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
 
         if navigationController.viewControllers.first === viewController {
             dismissModally(navigationController, animated: animated) { [weak self] in
-                self?.notifyObserverAboutPresentation(of: viewController)
+                self?.notifyObserverAboutDismiss(of: viewController)
             }
         } else {
             pop(viewController, animated: animated)
