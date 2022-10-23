@@ -25,7 +25,7 @@ open class ModalPresenter: ModalPresenting {
         viewController.modalTransitionStyle = modalPresentationConfiguration.transitionStyle
         viewController.modalPresentationStyle = modalPresentationConfiguration.presentationStyle
         viewController.presentationController?.delegate = adaptivePresentationDelegateWrapper
-        presentModally(viewController, animated: true)
+        presentModally(viewController, animated: animated)
     }
 
     public func dismiss(_ viewController: UIViewController, animated: Bool = true) {
