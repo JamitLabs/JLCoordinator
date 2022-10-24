@@ -25,7 +25,7 @@ extension ModalPresenting {
         animated: Bool,
         completion: (() -> Void)? = nil
     ) {
-        presentingViewController.present(viewController, animated: true) { [weak self] in
+        presentingViewController.present(viewController, animated: animated) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
             completion?()
         }

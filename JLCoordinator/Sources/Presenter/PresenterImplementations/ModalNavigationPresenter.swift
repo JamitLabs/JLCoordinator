@@ -30,7 +30,7 @@ public class ModalNavigationPresenter: ModalPresenting, NavigablePresenting {
         navigationController.delegate = delegateWrapper
         navigationController.presentationController?.delegate = adaptivePresentationDelegateWrapper
         navigationController.modalTransitionStyle = modalPresentationConfiguration.transitionStyle
-        presentModally(navigationController, animated: true) { [weak self] in
+        presentModally(navigationController, animated: animated) { [weak self] in
             self?.notifyObserverAboutPresentation(of: viewController)
         }
     }
